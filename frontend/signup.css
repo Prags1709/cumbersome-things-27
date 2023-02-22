@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+
+
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: "Work Sans", sans-serif;
+    background-color: rgb(74,21,75);
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+
+#navhead{
+    display: flex;
+    color: white;
+    gap: 20px;
+    font-size: larger;
+    margin-right: 40px;
+}
+#navbarlogo>img{
+    height: 100%;
+}
+
+#navbarlogo{
+    margin-left: 40px;
+}
+
+#home{
+    display: flex;
+    padding: 5%;
+    justify-content: space-between;
+}
+#home>div{
+    width: 45%;
+}
+
+#homeleft>h1{
+    color: white;
+    font-size: 60px;
+    
+
+}
+
+.yelloclr{
+    color: #ecb22e;
+}
+
+#homeleft>p{
+    color: white;
+    font-size: x-large;
+    margin-top: -40px;
+    
+}
+
+#sign_buttons{
+    display: flex;
+    justify-content: space-between;
+
+}
+#sign_buttons>button{
+    width: 48%;
+    height: 50px;
+    font-size: larger;
+}
+
+
+#sign_buttons>button:hover{
+    cursor: pointer;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    color:red
+}
+
+
+
+@media screen and (max-width: 767px){
+
+
+
+
+
+    #home{
+        display: grid;
+            border:1px solid red;
+            grid-template-columns: none;
+            margin: auto;
+    }
+
+
+    #home>div{
+        margin: auto;
+        margin-top: 50px;
+    }
+
+
+    #sign_buttons{
+        display: grid;
+        grid-template-columns: none;
+        gap:20px
+    
+    }
+
+    #sign_buttons>button{
+        font-size: small;
+    }
+
+
+    /* #homeleft>h1{
+        font-size: 20px;
+    } */
+}
