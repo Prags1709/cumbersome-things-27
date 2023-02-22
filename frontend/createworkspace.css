@@ -1,0 +1,113 @@
+body{
+    font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+    background-color: rgb(239, 244, 244);
+}
+#logo{
+   width: 300px;
+    margin: 0px auto;
+    text-align: center;
+   justify-content: center;
+    margin-top: 50px;
+}
+
+#logo-image{
+    height: 50px;
+    border-radius: 50%;
+}
+
+table tr{
+    text-align: center;
+}
+#confirmed{
+    width: 360px;
+  margin: 2px auto;
+   
+}
+#confirmed p{
+    background-color:white;
+    text-align: center;
+    
+    padding: 5px;
+    border-radius: 25px;
+}
+
+#main-content{
+    display: flex;
+    width: 70%;
+    margin: 10px auto;
+    
+    justify-content: space-between;
+}
+
+#main-content-left{
+    width: 48%;
+    padding: 10px;
+}
+
+#introduction{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: larger;
+}
+#heading-workspace{
+    font-size: 40px;
+}
+#main-content-right{
+    width: 48%;
+    padding: 10px;
+}
+
+#create-workspace{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.72);
+    color: azure;
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+#create-workspace:hover{
+    cursor: pointer;
+}
+#email{
+    text-decoration-color: black;
+}
+
+
+#term-condidition{
+    color: teal;
+}
+#term-condidition a{
+    color: teal;
+    text-decoration: none;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+#term-condidition a:hover{
+    text-decoration: underline;
+    
+}
+
+@media screen and (max-width: 870px) {
+    #main-content-left{
+        width: 95%;
+        padding: 10px;
+    }
+    #main-content-right{
+        display: none;
+    }
+
+}
+
+
+
+@media screen and (max-width: 600px){
+    #main-content-left{
+        width: 95%;
+        padding: 10px;
+    }
+    #main-content-right{
+        display: none;
+    }
+
+}

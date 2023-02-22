@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./image/WE CONNECT.png">
+    <link rel="stylesheet" href="createworkspace.css">
+    <title>landing</title>
+</head>
+<body>
+    <div id="logo">
+        <table>
+            <tr>
+                <td><img id="logo-image" src="./image/WE CONNECT.png" alt=""></td>
+                <td><h1>We connect</h1></td>
+            </tr>
+            
+        </table>
+       
+    </div>
+    <div id="confirmed">
+        <p>Confirmed as <b>birendra.mahto@gmail.com</b></p>
+    </div>
+    
+    <div id="main-content">
+        <div id="main-content-left" >
+        <h1 id="heading-workspace">Create a new W-C workspace</h1>
+        <p id="introduction">W-C gives your team a home 
+             a place where they can talk and work together.
+              To create a new workspace,
+               click on the button below.</p>
+
+               <button id="create-workspace">Create a workspace</button>
+               <p id="term-condidition">
+
+                By continuing, you’re agreeing to <a href="#">our customer terms of service</a>,
+                 <a href="#">user terms of service</a>, <a href="#">privacy policy</a> and <a href="#">cookie policy</a>.
+               </p>
+        </div>
+        <div id="main-content-right" >
+     <img src="https://www.picktime.com/webassets/2021/img/business/parent-meetings-hero.svg" alt="">
+        </div>
+
+
+
+    </div>
+
+    
+
+</body>
+</html>
+
+<script>
+    let workspace=document.querySelector("#create-workspace");
+    workspace.addEventListener("click",(event)=>{
+        event.preventDefault();
+        window.location.href="setupteamname.html"
+    })
+</script>
