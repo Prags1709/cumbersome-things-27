@@ -609,14 +609,15 @@
     /* z-index: -1;
     position: relative; */
   }
-  #msg_chn{
+  .msg_chn{
     color: black;
     font-weight: 800;
+    cursor: pointer;
     font-size: 1rem;
     border-bottom: 1px solid grey;
     padding-bottom: 0.5rem;
   }
-  #msg_chn i{
+  .msg_chn i{
     color: black;
     font-weight: 800;
     font-size: 1rem;
@@ -854,8 +855,10 @@ section{
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
+  border-radius: 12px;
+  margin-top: -35px;
   border: 1px solid #888;
-  width: 80%;
+  width: 40%;
 }
 
 /* The Close Button */
@@ -864,6 +867,7 @@ section{
   float: right;
   font-size: 28px;
   font-weight: bold;
+  margin-top: -20px;
 }
 
 .xclose:hover,
@@ -871,4 +875,142 @@ section{
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+.z_star{
+  margin-top: 1rem;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+#z_star{
+  font-size: 14px;
+  color: #616061;
+  border: 1px solid #888;
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+.z_noti{
+  font-size: 14px;
+  color: #616061;
+  border: 1px solid #888;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#z_noti{
+  margin-right: 10px;
+}
+.z_topic{
+  display: flex;
+  gap: 20px;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #888;
+}
+.z_topic p{
+  font-size: 14px;
+  color: #616061;
+  font-weight: bold;
+  cursor: pointer;
+}
+#z_to{
+  /* padding-bottom: 0.5rem; */
+  color: #1164a3;
+  font-weight: bolder;
+  font-size: 15px;
+  /* background-color: #0a8d48; */
+
+}
+.z_srh{
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  border-radius: 7px;
+}
+#z_srh_btn{
+  width: 8%;
+  font-size: 15px;
+  background-color: white;
+  padding: 0.7rem;
+  border: 1px solid #888;
+  border-right: none;
+  color: #616061;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.z_srh_input{
+  width: 92%;
+  outline: none;
+  font-size: 15px;
+  background-color: white;
+  padding: 0.7rem;
+  border: 1px solid #888;
+  border-left: none;
+  font-weight: 600;
+  color: #616061;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.z_addpeople{
+  margin-top: 1rem;
+  font-size: 15px;
+  color: #616061;
+  cursor: pointer;
+}
+#z_addpeople{
+  font-size: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #2196F3;
+  padding: 5px;
+  background-color: hsl(207, 100%, 88%);
+}
+.map_userdiv{
+  margin-top: 1rem;
+  height: 40vh;
+  overflow: scroll;
+}
+.user_div{
+  /* background-color: hsl(207, 100%, 88%); */
+  display: flex;
+  align-items: center;
+}
+.user_div:hover{
+  background-color: #c0c0c0;
+  font-weight: bolder;
+  border-radius: 7px;
+  padding-left: 20px;
+}
+.user_div img{
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.user_div p:nth-child(2){
+  color: #616061;
+  font-size: 15px;
+  margin-left: 15px;
+}
+.user_div p:nth-child(3){
+  color: #616061;
+  font-size: 13px;
+  margin-left: 15px;
+  padding: 1rem 0rem;
+}
+@media screen and (max-width: 1200px){
+  .xmodal-content{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 850px){
+  .xmodal-content{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 600px){
+  
+  .xmodal-content{
+    width: 70%;
+  }
 }
