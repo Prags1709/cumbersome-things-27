@@ -93,6 +93,7 @@
     margin-left: 0.5rem;
     border-radius: 0.325rem;
     cursor: pointer;
+    background-color: white;
 }
   #leftNav {
     background-color: #3f0e40;
@@ -682,8 +683,192 @@
   .modal-content{
     width: 90%;
   }
+  .mmodal-content{
+    width: 60%;
+  }
 }
 section{
   cursor: pointer;
 }
 
+/* user modal */
+/* The Modal (background) */
+.mmodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* text-align: right; */
+}
+
+/* Modal Content */
+.mmodal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 25%;
+  position: absolute;
+  right: 0;
+  border-radius: 10px;
+  margin-top: -50px;
+}
+
+/* The Close Button */
+.closed {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: -20px;
+}
+
+.closed:hover,
+.closed:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#user_image{
+  width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+    border-radius: 0.325rem;
+    cursor: pointer;
+    border: 1px solid #888;
+}
+.y_top{
+  display: flex;
+}
+.y_namediv{
+  margin-left: 20px;
+}
+.y_name{
+  font-size: 15px;
+  font-weight: bold;
+}
+.y_online{
+  font-size: 13px;
+  color: #616061;
+}
+#y_online{
+  font-size: 11px;
+  color: green;
+}
+.y_email{
+  color: #555555;
+  font-size: 13px;
+}
+#y_email{
+  margin-right: 5px;
+}
+.y_status{
+  margin-top: 1rem;
+  padding: 7px 15px;
+  border: 1px solid #aaaaaa;
+  color:#616061;
+  border-radius: 7px;
+  margin-bottom: 0.5rem;
+}
+.y_status:hover{
+  color: white;
+  background-color: #616061;
+}
+.y_status:hover #y_status{
+  color: white;
+  font-size: 18px;
+  border: #0a8d48;
+  background-color: #616061;
+}
+#y_status{
+  margin-right: 10px;
+}
+.y_rem{
+  /* border-bottom: 1px solid #888; */
+  color: #616061;
+  padding:0.5rem 0rem 0.5rem 0rem;
+}
+.y_rem:hover{
+  background-color: #1164a3;
+  color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding-left: 1rem;
+}
+.y_signout{
+  /* border-bottom: 1px solid #888; */
+  color: black;
+  padding:0.5rem 0rem 0.5rem 0rem;
+  font-weight: bold;
+}
+.y_signout:hover{
+  background-color: #1164a3;
+  color: white;
+  font-weight: bolder;
+  border-radius: 5px;
+  padding-left: 1rem;
+}
+
+@media screen and (max-width: 1200px){
+  .mmodal-content{
+    width: 35%;
+  }
+}
+@media screen and (max-width: 850px){
+  .mmodal-content{
+    width: 45%;
+  }
+}
+@media screen and (max-width: 600px){
+  
+  .mmodal-content{
+    width: 70%;
+  }
+}
+
+/* channel */
+/* The Modal (background) */
+.xmodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.xmodal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.xclose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.xclose:hover,
+.xclose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
