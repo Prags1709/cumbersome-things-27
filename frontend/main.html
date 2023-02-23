@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
     <link rel="stylesheet" href="./main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <script src="https://kit.fontawesome.com/c8503353a1.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/c8503353a1.js"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://kit.fontawesome.com/3b8f492a1b.js"
       crossorigin="anonymous"
@@ -15,28 +21,31 @@
     <script src="./main.js" defer></script>
   </head>
 
+  <!-- msg input box  167-->
+  <!-- submit button  168-->
+  <!-- show chat div  152 -->
   <body>
     <section id="topNav">
-        <div id="nav_left">
-            <i class="far fa-clock clock topNavIcon"></i>
-            <input
-                type="search"
-                name="searchBar"
-                id="searchBar"
-                placeholder="Search Workspace"
-            />
+      <div id="nav_left">
+        <i class="far fa-clock clock topNavIcon"></i>
+        <input
+          type="search"
+          name="searchBar"
+          id="searchBar"
+          placeholder="Search Workspace"
+        />
         <div class="search-bar">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-        
+      </div>
 
-        </div>
-      
       <div id="nav_right">
         <i id="topNavIcon" class="far fa-question-circle question"></i>
-        <img id="user_img" src="https://avatars.githubusercontent.com/u/100188653?s=80&u=561df7d1f3dc08f8b85d1ff5c483d3372e58793a&v=4" />
+        <img
+          id="user_img"
+          src="https://avatars.githubusercontent.com/u/100188653?s=80&u=561df7d1f3dc08f8b85d1ff5c483d3372e58793a&v=4"
+        />
       </div>
-      
     </section>
     <main id="main">
       <section id="leftNav">
@@ -78,19 +87,18 @@
           <section id="leftThird">
             <button class="accordion">Channels</button>
             <div class="panel">
-                <div>
-                    <span id="Channel_icon">
-                        <i class="fa-regular fa-hashtag"></i>
-                    </span>
-                    <span id="Channel_name">Channel 1</span>
-                </div>
-                <div>
-                    <span id="Channel_icon">
-                        <i class="fa-regular fa-hashtag"></i>
-                    </span>
-                    <span id="Channel_name">Channel 2</span>
-                </div>
-                
+              <div>
+                <span id="Channel_icon">
+                  <i class="fa-regular fa-hashtag"></i>
+                </span>
+                <span id="Channel_name">Channel 1</span>
+              </div>
+              <div>
+                <span id="Channel_icon">
+                  <i class="fa-regular fa-hashtag"></i>
+                </span>
+                <span id="Channel_name">Channel 2</span>
+              </div>
             </div>
           </section>
 
@@ -99,25 +107,51 @@
               <span id="addChannelIcon">
                 <i class="fas fa-plus"></i>
               </span>
+              <!-- <span id="addChannelIconText">Add Channel</span> -->
               <span id="addChannelIconText">Add Channel</span>
+
+              <!-- Open Channel Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p class="x_chn_name">Create a channel</p>
+                  <p class="x_info">Channels are where your team communicates. They’re best when organized around a topic — #marketing, for example.</p>
+                  <p class="x_nme">Name</p>
+                  <input class="x_channel" placeholder="# e.g. plan-budget" type="text">
+                  <p class="x_nme">Description (optional)</p>
+                  <input class="x_desc" placeholder="" type="text">
+                  <p class="x_wht">What's this channel about?</p>
+                  <p class="x_pvt">Make Private</p>
+                  <div id="x_pvt">
+                    <p class="x_pvtinfo">When a channel is set to private, it can only be viewed or joined by invitation.</p>
+                    <label class="switch">
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                  <div class="x_lastdiv">
+                    <button class="x_btn">Create</button>
+                  </div>
+                </div>
+              </div>
             </section>
           </section>
           <section id="leftFive">
             <button class="accordion">Direct message</button>
             <div class="panel">
-                <div>
-                    <span id="Channel_icon">
-                        <i class="fa-regular fa-hashtag"></i>
-                    </span>
-                    <span id="Channel_name">user 1</span>
-                </div>
-                <div>
-                    <span id="Channel_icon">
-                        <i class="fa-regular fa-hashtag"></i>
-                    </span>
-                    <span id="Channel_name">user 2</span>
-                </div>
-                
+              <div>
+                <span id="Channel_icon">
+                  <i class="fa-regular fa-hashtag"></i>
+                </span>
+                <span id="Channel_name">user 1</span>
+              </div>
+              <div>
+                <span id="Channel_icon">
+                  <i class="fa-regular fa-hashtag"></i>
+                </span>
+                <span id="Channel_name">user 2</span>
+              </div>
             </div>
           </section>
         </section>
@@ -126,34 +160,45 @@
         </section>
       </section>
 
-      <span id="midSec">
-        <section id="midInCenter">
-          <!-- <section id="logo">
-            <img src="images/slack_logo.png" alt="WC-LOGO" id="slackLogo" />
-            <section id="heading">
-              <h1>Welcome To We Connect</h1>
-            </section>
-            <section id="mainPara">
-              <p>
-                  We connect brings all your team comunication into once place,makes it
-                all instantly <br />
-                Searchable and available whereever you go.
-              </p>
-            </section>
-            <section id="secPara">
-              <p>
-                our aim is to make your working life simpler,more pleasant and
-                more productive
-              </p>
-            </section>
-            <section id="btnSec">
-              <button id="btn">Create Channel</button>
-            </section>
-          </section> -->
-        </section>
-      </span>
+      <div id="midSec">
+        <p id="msg_chn"><i class="fa-regular fa-hashtag"></i> Channel Name</p>
+
+        <div id="msg_container">
+          <!-- show chat here -->
+        </div>
+
+        <!-- message div -->
+        <div id="msg_section">
+          <div id="msg_icon">
+            <i class="fa-sharp fa-solid fa-bold"></i>
+            <i class="fa-sharp fa-solid fa-italic"></i>
+            <i class="fa-solid fa-strikethrough"></i>
+            <i class="fa-solid fa-link"></i>
+            <i class="fa-sharp fa-solid fa-list-ol"></i>
+            <i class="fa-sharp fa-solid fa-list-ul"></i>
+            <i class="fa-solid fa-code"></i>
+            <i class="fa-sharp fa-solid fa-code-compare"></i>
+          </div>
+
+          <!-- message input box -->
+
+          <form id="msg_form">
+            <input id="msg_inp" type="text" placeholder="message # General"/>
+            <input id="msg_submit" type="submit" value="Send">
+          </form>
+
+          <div id="msg_icon1">
+            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-video"></i>
+            <i class="fa-sharp fa-solid fa-microphone"></i>
+            <i class="fa-solid fa-face-smile"></i>
+            <i class="fa-solid fa-at"></i>
+            <i class="fa-sharp fa-solid fa-font-case"></i>
+          </div>
+          
+        </div>
+      </div>
       <section>
-       
         <i class="fas fa-bars" id="toggleBtn"></i>
       </section>
     </main>

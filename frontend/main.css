@@ -96,10 +96,11 @@
 }
   #leftNav {
     background-color: #3f0e40;
-    min-width: auto;
-    height: 100vh;
+    width: 20%;
+    height: 94vh;
     display: flex;
     flex-direction: column;
+    overflow: scroll;
     justify-content: space-between;
    
   }
@@ -325,25 +326,22 @@
     display: flex;
     flex-direction: row;
   }
-  #midSec {
-   
-    width: 100%;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  /* #midSec { */
+   /* z-index: -1;
+    position: relative; */
+    /* width: 100%; */
+    /* display: flex; */
+  /* } */
   
-  #midInCenter {
+  /* #midInCenter {
     display: flex;
    
     margin: 0 10%;
   
     
-    z-index: -1;
-    position: relative;
+    
     justify-content: center;
-  }
+  } */
   #heading {
     margin: 1rem;
     margin-top: 1rem;
@@ -376,6 +374,12 @@
     margin: auto;
   }
   @media screen and (max-width: 870px) {
+    #leftNav{
+      width: 50%;
+    }
+    #midSec{
+      width: 50%;
+    }
     #heading {
       font-size: 1.3rem;
     }
@@ -390,6 +394,15 @@
   }
   
   @media screen and (max-width: 600px) {
+    #main{
+      width: 100%;
+    }
+    #leftNav{
+      width: 50%;
+    }
+    #midSec{
+      width: 100%;
+    }
     #leftNav {
       display: none;
     }
@@ -416,4 +429,261 @@
      
     }
   }
+
+
+  /* model css */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
   
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    color: black;
+    border: 1px solid #888;
+    width: 40%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -25px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .x_chn_name{
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .x_info{
+    color: #616061;
+    font-size: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .x_nme{
+    font-size: 15px;
+    font-weight: bolder;
+  }
+  .x_channel{
+    width: 100%;
+    color: #616061;
+    background-color: #ffffff;
+    padding: 6px 10px;
+    font-size: 18px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+  }
+  .x_desc{
+    width: 100%;
+    color: #616061;
+    background-color: #ffffff;
+    padding: 6px 10px;
+    font-size: 18px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #aaaaaa;
+  }
+  .x_wht{
+    margin-top: -12px;
+    font-size: 13px;
+    color: #888;
+  }
+  #x_pvt{
+    display: flex;
+    justify-content: space-between;
+  }
+  .x_pvt{
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 1rem;
+  }
+  .x_pvtinfo{
+    color: #616061;
+    font-size: 15px;
+    width: 75%;
+    /* margin-top: 0.2rem; */
+    margin-bottom: 1rem;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .x_lastdiv{
+    /* background-color: green; */
+    margin-top: 10px;
+    text-align: right;
+  }
+  .x_btn{
+    padding: 10px 14px;
+    background-color: green;
+    color: white;
+    font-weight: bolder;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+  }
+  #midSec{
+    height: 94vh;
+    width: 80%;
+    overflow: scroll;
+    padding: 0.7rem;
+    /* z-index: -1;
+    position: relative; */
+  }
+  #msg_chn{
+    color: black;
+    font-weight: 800;
+    font-size: 1rem;
+    border-bottom: 1px solid grey;
+    padding-bottom: 0.5rem;
+  }
+  #msg_chn i{
+    color: black;
+    font-weight: 800;
+    font-size: 1rem;
+  }
+#msg_section{
+ position: absolute;
+ bottom: 10px;
+  width: 78%;
+  border: 1px solid grey;
+  border-radius: 7px;
+  /* background-color: #0a8d48; */
+  padding: 1rem;
+}
+#msg_icon{
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+  opacity: 0.3;
+  cursor: pointer;
+}
+#msg_form{
+  display: flex;
+  width: 100%;
+}
+#msg_inp{
+  width: 93%;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0rem;
+  border: none;
+  color: black;
+  opacity: 0.6;
+  outline: none;
+  /* position:relative;
+  z-index: -1;  */
+}
+#msg_submit{
+  width: 7%;
+  cursor: pointer;
+  border: none;
+  height: 2rem;
+  font-size: 1rem;
+}
+#msg_icon1{
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.3;
+}
+@media screen and (max-width: 850px){
+  #msg_section{
+    width: 59%;
+  }
+  .modal-content{
+    width: 65%;
+  }
+}
+@media screen and (max-width: 600px){
+  #msg_section{
+    width: 100%;
+  }
+  .modal-content{
+    width: 90%;
+  }
+}
+section{
+  cursor: pointer;
+}
+
