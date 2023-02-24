@@ -100,3 +100,7 @@ window.onclick = function(event) {
     xmodal.style.display = "none";
   }
 }
+
+// done by birendra
+
+document.querySelector("#workspace").innerText=JSON.parse(localStorage.getItem("companyname"))
