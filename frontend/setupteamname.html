@@ -18,7 +18,7 @@
 
     <div id="main-content">
         <div id="left-content">
-           <h1 id="company-name">h</h1>
+           <h1 id="company-name"></h1>
         </div>
         <div id="right-content">
             <h1 id="company-heading">What’s the name of your company or team?
@@ -41,6 +41,10 @@
     let workspace=document.querySelector("#next");
     workspace.addEventListener("click",(event)=>{
         event.preventDefault();
+        let name=document.querySelector("#name-input").value;
+        console.log(name)
+        let companyname=document.querySelector("#company-name").innerText=name;
+        localStorage.setItem("companyname",JSON.stringify(companyname));
         window.location.href="setupchannel.html"
     })
 
