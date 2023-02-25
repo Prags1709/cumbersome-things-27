@@ -129,7 +129,7 @@ otp_inputs.forEach(
                     verfEle.style.display = 'none';
                     successEle.style.display = 'block';
                     errorEle.style.display = 'none';
-
+window.location.href="login.html"
                 }
                 else {
                     errorEle.style.display = 'block';
