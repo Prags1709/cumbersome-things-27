@@ -26,7 +26,7 @@
 
             <p id="details">This could be anything: a project, campaign, event or the deal you’re trying to close.</p>
 
-            <input type="text" placeholder="E.g. Q4 Budget ,Autumn Compaign">
+            <input type="text" id="name-input" placeholder="E.g. Q4 Budget ,Autumn Compaign">
             <br>
             <button id="next" >Next</button>
 
@@ -36,3 +36,15 @@
 </body>
 
 </html>
+<script>
+    document.querySelector("#company-name").innerText=JSON.parse(localStorage.getItem("companyname"))
+    let workspace=document.querySelector("#next");
+    workspace.addEventListener("click",(event)=>{
+        event.preventDefault();
+        let des=document.querySelector("#name-input").value;
+       
+        window.location.href="main.html"
+    })
+
+   
+</script>
