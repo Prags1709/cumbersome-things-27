@@ -124,19 +124,23 @@
           </section>
 
           <section id="leftThird">
-            <button class="accordion">Channels</button>
+            <div id="ch_general">
+              <span id="Channel_icon">
+                <i class="fa-regular fa-hashtag"></i>
+              </span>
+              <span id="Channel_name">General</span>
+            </div>
+
+            <button class="accordion">more channels</button>
             <div class="panel">
-              <div>
+
+              <!-- map the channels -->
+
+              <div id="created_ch">
                 <span id="Channel_icon">
                   <i class="fa-regular fa-hashtag"></i>
                 </span>
                 <span id="Channel_name">Channel 1</span>
-              </div>
-              <div>
-                <span id="Channel_icon">
-                  <i class="fa-regular fa-hashtag"></i>
-                </span>
-                <span id="Channel_name">Channel 2</span>
               </div>
             </div>
           </section>
@@ -208,10 +212,10 @@
           <span id="logoutText">Logout</span>
         </section> -->
       </section>
-
+    <div id="midSection">
       <div id="midSec">
         <p id="xyBtn" class="msg_chn">
-          <i class="fa-regular fa-hashtag"></i> Channel Name
+          <i class="fa-regular fa-hashtag"></i> general
         </p>
 
         <!-- user modal -->
@@ -219,7 +223,7 @@
           <!-- Modal content -->
           <div class="xmodal-content">
             <span class="xclose">&times;</span>
-            <h2><i class="fa-regular fa-hashtag"></i> Channel</h2>
+            <h2><i class="fa-regular fa-hashtag"></i> general</h2>
             <div class="z_star">
               <i id="z_star" class="fa-regular fa-star"></i>
               <p class="z_noti">
@@ -307,9 +311,12 @@
           </div>
         </div>
       </div>
+    </div>
+      
       <section>
         <i class="fas fa-bars" id="toggleBtn"></i>
       </section>
     </main>
   </body>
 </html>
+<script src="./main_channels.js"></script>

@@ -256,6 +256,13 @@
     color: #fff;
     opacity: 0.7;
   }
+  #ch_general{
+    padding-left: 0.8rem;
+    margin-top: 1rem;
+  }
+  #created_ch{
+    margin-bottom: 0.5rem;
+  }
   #leftThird {
     border-bottom: 1px solid grey;
     color: White;
@@ -601,9 +608,12 @@
     border: none;
     border-radius: 5px;
   }
+  #midSection{
+    width: 80%;
+  }
   #midSec{
     height: 94vh;
-    width: 80%;
+    width: 100%;
     overflow: scroll;
     padding: 0.7rem;
     /* z-index: -1;
@@ -678,6 +688,9 @@
   }
 }
 @media screen and (max-width: 600px){
+  #midSection{
+    width: 100%;
+  }
   #msg_section{
     width: 100%;
   }
