@@ -2,8 +2,10 @@ const express=require("express");
 const bcrypt=require("bcrypt")
 const jwt=require("jsonwebtoken")
 const loginR=express.Router();
+const cookieParser = require('cookie-parser')
 const {Rmodel}=require("../models/user");
 const { client } = require("../redis/redis");
+
 loginR.post("/login",async(req,res)=>{
     let {email,password}=req.body
     try {
@@ -20,7 +22,7 @@ loginR.post("/login",async(req,res)=>{
         
             res.cookie("Token",token)
 
-            res.status(200).send({"msg":"Login Successfull","token":token})
+            res.status(200).send({"msg":"Login Successfull","token":token,"user":data})
             } else {res.send("Wrong Credntials")}
             });
             } else {

@@ -20,7 +20,7 @@
        
     </div>
     <div id="confirmed">
-        <p>Confirmed as <b>birendra.mahto@gmail.com</b></p>
+        <p >Confirmed as <b id="email">birendra.mahto@gmail.com</b></p>
     </div>
     
     <div id="main-content">
@@ -52,6 +52,9 @@
 </html>
 
 <script>
+    let emal=document.querySelector("#email");
+    let user=JSON.parse(localStorage.getItem("user"))
+    emal.innerText=user.email;
     let workspace=document.querySelector("#create-workspace");
     workspace.addEventListener("click",(event)=>{
         event.preventDefault();
