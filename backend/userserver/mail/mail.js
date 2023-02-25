@@ -20,7 +20,7 @@ mroute.post("/sendotp",async(req,res)=>{
             port: 587,
             auth: {
                 user: 'sriramalavalapatiit01@gmail.com',
-                pass: 'mrzeelbhiuztsouw'
+                pass: ''
             }
         });
         // const email = req.body.email;
