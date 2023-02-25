@@ -313,3 +313,7 @@ ch1.addEventListener('click',function(){
       </div>`
 })
 
+// done by birendra
+
+document.querySelector("#workspace").innerText=JSON.parse(localStorage.getItem("companyname"))
+

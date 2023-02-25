@@ -1,127 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="./main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/c8503353a1.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/3b8f492a1b.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./main.js" defer></script>
-  </head>
 
-  <!-- msg input box  296-->
-  <!-- submit button  297-->
-  <!-- show chat div  277 -->
-  <!-- show users div 246-->
-  <!-- signout 85-->
-  <!-- add channel 127-->
-  <body>
-    <section id="topNav">
-      <div id="nav_left">
-        <i class="far fa-clock clock topNavIcon"></i>
-        <input
-          type="search"
-          name="searchBar"
-          id="searchBar"
-          placeholder="Search Workspace"
-        />
-        <div class="search-bar">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/c8503353a1.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/3b8f492a1b.js" crossorigin="anonymous"></script>
+  <script src="./main.js" defer></script>
+</head>
+
+<!-- msg input box  296-->
+<!-- submit button  297-->
+<!-- show chat div  277 -->
+<!-- show users div 246-->
+<!-- signout 85-->
+<!-- add channel 127-->
+
+<body>
+  <section id="topNav">
+    <div id="nav_left">
+      <i class="far fa-clock clock topNavIcon"></i>
+      <input type="search" name="searchBar" id="searchBar" placeholder="Search Workspace" />
+      <div class="search-bar">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
+    </div>
 
-      <div id="nav_right">
-        <i id="topNavIcon" class="far fa-question-circle question"></i>
-        <img
-          class="mBtn"
-          id="user_img"
-          src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
-        />
-      </div>
-      <!-- The Modal -->
-      <div id="mModal" class="mmodal">
-        <!-- Modal content -->
-        <div class="mmodal-content">
-          <span class="closed">&times;</span>
-          <div class="y_top">
-            <img
-              id="user_image"
-              src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
-            />
-            <div class="y_namediv">
-              <p class="y_name">Username</p>
-              <p class="y_online">
-                <i id="y_online" class="fa-solid fa-circle"></i> Active
-              </p>
-              <p class="y_email">
-                <i id="y_email" class="fa-solid fa-envelope"></i
-                >example@gmail.com
-              </p>
-            </div>
-          </div>
-
-          <div class="y_status">
-            <p>
-              <i id="y_status" class="fa-solid fa-face-smile"></i> Update your
-              Status
+    <div id="nav_right">
+      <i id="topNavIcon" class="far fa-question-circle question"></i>
+      <img class="mBtn" id="user_img" src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png" />
+    </div>
+    <!-- The Modal -->
+    <div id="mModal" class="mmodal">
+      <!-- Modal content -->
+      <div class="mmodal-content">
+        <span class="closed">&times;</span>
+        <div class="y_top">
+          <img id="user_image" src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png" />
+          <div class="y_namediv">
+            <p class="y_name">Username</p>
+            <p class="y_online">
+              <i id="y_online" class="fa-solid fa-circle"></i> Active
+            </p>
+            <p class="y_email">
+              <i id="y_email" class="fa-solid fa-envelope"></i>example@gmail.com
             </p>
           </div>
-          <p class="y_rem">Set Yourself As Always</p>
-          <p class="y_rem">Profile</p>
-          <p class="y_rem">Preferances</p>
-          <p class="y_rem">Pause Notification</p>
-          <p class="y_signout">SignOut from Workspace</p>
         </div>
-      </div>
-    </section>
-    <main id="main">
-      <section id="leftNav">
-        <section id="UpperSec">
-          <section id="leftFirst">
-            <section id="onlineSec">
-              <h4>Workspace</h4>
-              <span id="greenDotSec">
-                <div id="online"></div>
-                <span id="vikrant">user name</span>
-              </span>
-            </section>
-            <section id="penSec">
-              <i class="fas fa-pen pen"></i>
-            </section>
-          </section>
 
-          <section id="leftSecond">
-            <section id="threadSec">
-              <span id="threadIcon">
-                <i class="fas fa-comment-dots"></i>
-              </span>
-              <span id="threadText">Thread</span>
-            </section>
-            <section id="atTheRateSec">
-              <span id="atTheRateIcon">
-                <i class="fas fa-at"></i>
-              </span>
-              <span id="atTheRateText">Mentions & Reactions</span>
-            </section>
-            <section id="moreSec">
-              <span id="moreIcon">
-                <i class="fas fa-ellipsis-v"></i>
-              </span>
-              <span id="moreText">More</span>
-            </section>
+        <div class="y_status">
+          <p>
+            <i id="y_status" class="fa-solid fa-face-smile"></i> Update your
+            Status
+          </p>
+        </div>
+        <p class="y_rem">Set Yourself As Always</p>
+        <p class="y_rem">Profile</p>
+        <p class="y_rem">Preferances</p>
+        <p class="y_rem">Pause Notification</p>
+        <p class="y_signout">SignOut from Workspace</p>
+      </div>
+    </div>
+  </section>
+  <main id="main">
+    <section id="leftNav">
+      <section id="UpperSec">
+        <section id="leftFirst">
+          <section id="onlineSec">
+            <h4 id="workspace">Workspace</h4>
+            <span id="greenDotSec">
+              <div id="online"></div>
+              <span id="vikrant">user name</span>
+            </span>
           </section>
+          <section id="penSec">
+            <i class="fas fa-pen pen"></i>
+          </section>
+        </section>
+
 
           <section id="leftThird">
             <div id="ch_general">
@@ -143,74 +103,109 @@
                 <span id="Channel_name">Channel 1</span>
               </div>
             </div>
+        <section id="leftSecond">
+          <section id="threadSec">
+            <span id="threadIcon">
+              <i class="fas fa-comment-dots"></i>
+            </span>
+            <span id="threadText">Thread</span>
           </section>
+          <section id="atTheRateSec">
+            <span id="atTheRateIcon">
+              <i class="fas fa-at"></i>
+            </span>
+            <span id="atTheRateText">Mentions & Reactions</span>
 
-          <section id="leftfourth">
-            <section id="addChannelSec">
-              <span id="addChannelIcon">
-                <i class="fas fa-plus"></i>
+          </section>
+          <section id="moreSec">
+            <span id="moreIcon">
+              <i class="fas fa-ellipsis-v"></i>
+            </span>
+            <span id="moreText">More</span>
+          </section>
+        </section>
+
+        <section id="leftThird">
+          <button class="accordion">Channels</button>
+          <div class="panel">
+            <div>
+              <span id="Channel_icon">
+                <i class="fa-regular fa-hashtag"></i>
               </span>
-              <!-- <span id="addChannelIconText">Add Channel</span> -->
-              <span id="addChannelIconText">Add Channel</span>
+              <span id="Channel_name">Channel 1</span>
+            </div>
+            <div>
+              <span id="Channel_icon">
+                <i class="fa-regular fa-hashtag"></i>
+              </span>
+              <span id="Channel_name">Channel 2</span>
+            </div>
+          </div>
+        </section>
 
-              <!-- Open Channel Modal -->
-              <div id="myModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <p class="x_chn_name">Create a channel</p>
-                  <p class="x_info">
-                    Channels are where your team communicates. They’re best when
-                    organized around a topic — #marketing, for example.
+        <section id="leftfourth">
+          <section id="addChannelSec">
+            <span id="addChannelIcon">
+              <i class="fas fa-plus"></i>
+            </span>
+            <!-- <span id="addChannelIconText">Add Channel</span> -->
+            <span id="addChannelIconText">Add Channel</span>
+
+            <!-- Open Channel Modal -->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="x_chn_name">Create a channel</p>
+                <p class="x_info">
+                  Channels are where your team communicates. They’re best when
+                  organized around a topic — #marketing, for example.
+                </p>
+                <p class="x_nme">Name</p>
+                <input class="x_channel" placeholder="# e.g. plan-budget" type="text" />
+                <p class="x_nme">Description (optional)</p>
+                <input class="x_desc" placeholder="" type="text" />
+                <p class="x_wht">What's this channel about?</p>
+                <p class="x_pvt">Make Private</p>
+                <div id="x_pvt">
+                  <p class="x_pvtinfo">
+                    When a channel is set to private, it can only be viewed or
+                    joined by invitation.
                   </p>
-                  <p class="x_nme">Name</p>
-                  <input
-                    class="x_channel"
-                    placeholder="# e.g. plan-budget"
-                    type="text"
-                  />
-                  <p class="x_nme">Description (optional)</p>
-                  <input class="x_desc" placeholder="" type="text" />
-                  <p class="x_wht">What's this channel about?</p>
-                  <p class="x_pvt">Make Private</p>
-                  <div id="x_pvt">
-                    <p class="x_pvtinfo">
-                      When a channel is set to private, it can only be viewed or
-                      joined by invitation.
-                    </p>
-                    <label class="switch">
-                      <input type="checkbox" checked />
-                      <span class="slider round"></span>
-                    </label>
-                  </div>
-                  <div class="x_lastdiv">
-                    <button class="x_btn">Create</button>
-                  </div>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider round"></span>
+                  </label>
                 </div>
-              </div>
-            </section>
-          </section>
-          <section id="leftFive">
-            <button class="accordion">Direct message</button>
-            <div class="panel">
-              <div>
-                <span id="Channel_icon">
-                  <i class="fa-regular fa-hashtag"></i>
-                </span>
-                <span id="Channel_name">user 1</span>
-              </div>
-              <div>
-                <span id="Channel_icon">
-                  <i class="fa-regular fa-hashtag"></i>
-                </span>
-                <span id="Channel_name">user 2</span>
+                <div class="x_lastdiv">
+                  <button class="x_btn">Create</button>
+                </div>
               </div>
             </div>
           </section>
         </section>
-        <!-- <section id="logoutSec">
+        <section id="leftFive">
+          <button class="accordion">Direct message</button>
+          <div class="panel">
+            <div>
+              <span id="Channel_icon">
+                <i class="fa-regular fa-hashtag"></i>
+              </span>
+              <span id="Channel_name">user 1</span>
+            </div>
+            <div>
+              <span id="Channel_icon">
+                <i class="fa-regular fa-hashtag"></i>
+              </span>
+              <span id="Channel_name">user 2</span>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- <section id="logoutSec">
           <span id="logoutText">Logout</span>
         </section> -->
+
       </section>
     <div id="midSection">
       <div id="midSec">
@@ -245,73 +240,103 @@
             </div>
             <p class="z_addpeople">
               <i id="z_addpeople" class="fa-solid fa-user-plus"></i>Add People
-            </p>
 
-            <!-- map users -->
-            <div class="map_userdiv">
-              <!-- user1 -->
-              <div class="user_div">
-                <img
-                  src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
-                />
-                <p>Dummy User</p>
-                <p>Dummyuser@gmail.com</p>
-              </div>
-              <!-- user2 -->
-              <div class="user_div">
-                <img
-                  src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
-                />
-                <p>Dummy User1</p>
-                <p>Dummyuser@gmail.com</p>
-              </div>
-              <!-- user3 -->
-              <div class="user_div">
-                <img
-                  src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
-                />
-                <p>Dummy User2</p>
-                <p>Dummyuser@gmail.com</p>
-              </div>
+    </section>
+
+    <div id="midSec">
+      <p id="xyBtn" class="msg_chn">
+        <i class="fa-regular fa-hashtag"></i> Channel Name
+      </p>
+
+      <!-- user modal -->
+      <div id="xyModal" class="xmodal">
+        <!-- Modal content -->
+        <div class="xmodal-content">
+          <span class="xclose">&times;</span>
+          <h2><i class="fa-regular fa-hashtag"></i> Channel</h2>
+          <div class="z_star">
+            <i id="z_star" class="fa-regular fa-star"></i>
+            <p class="z_noti">
+              <i id="z_noti" class="fa-regular fa-bell"></i> Enable
+              Notification
+
+            </p>
+          </div>
+          <div class="z_topic">
+            <p>About</p>
+            <p id="z_to">Members</p>
+            <p>Integrations</p>
+            <p>Settings</p>
+          </div>
+          <div class="z_srh">
+            <button id="z_srh_btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input class="z_srh_input" placeholder="Find Members" />
+          </div>
+          <p class="z_addpeople">
+            <i id="z_addpeople" class="fa-solid fa-user-plus"></i>Add People
+          </p>
+
+          <!-- map users -->
+          <div class="map_userdiv">
+            <!-- user1 -->
+            <div class="user_div">
+              <img src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png" />
+              <p>Dummy User</p>
+              <p>Dummyuser@gmail.com</p>
+            </div>
+            <!-- user2 -->
+            <div class="user_div">
+              <img src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png" />
+              <p>Dummy User1</p>
+              <p>Dummyuser@gmail.com</p>
+            </div>
+            <!-- user3 -->
+            <div class="user_div">
+              <img src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png" />
+              <p>Dummy User2</p>
+              <p>Dummyuser@gmail.com</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <div id="msg_container">
-          <!-- show chat here -->
+      <div id="msg_container">
+        <!-- show chat here -->
+      </div>
+
+      <!-- message div -->
+      <div id="msg_section">
+        <div id="msg_icon">
+          <i class="fa-sharp fa-solid fa-bold"></i>
+          <i class="fa-sharp fa-solid fa-italic"></i>
+          <i class="fa-solid fa-strikethrough"></i>
+          <i class="fa-solid fa-link"></i>
+          <i class="fa-sharp fa-solid fa-list-ol"></i>
+          <i class="fa-sharp fa-solid fa-list-ul"></i>
+          <i class="fa-solid fa-code"></i>
+          <i class="fa-sharp fa-solid fa-code-compare"></i>
         </div>
 
-        <!-- message div -->
-        <div id="msg_section">
-          <div id="msg_icon">
-            <i class="fa-sharp fa-solid fa-bold"></i>
-            <i class="fa-sharp fa-solid fa-italic"></i>
-            <i class="fa-solid fa-strikethrough"></i>
-            <i class="fa-solid fa-link"></i>
-            <i class="fa-sharp fa-solid fa-list-ol"></i>
-            <i class="fa-sharp fa-solid fa-list-ul"></i>
-            <i class="fa-solid fa-code"></i>
-            <i class="fa-sharp fa-solid fa-code-compare"></i>
-          </div>
+        <!-- message input box -->
 
-          <!-- message input box -->
+        <form id="msg_form">
+          <input id="msg_inp" type="text" placeholder="message # General" />
+          <input id="msg_submit" type="submit" value="Send" />
+        </form>
 
-          <form id="msg_form">
-            <input id="msg_inp" type="text" placeholder="message # General" />
-            <input id="msg_submit" type="submit" value="Send" />
-          </form>
-
-          <div id="msg_icon1">
-            <i class="fa-solid fa-plus"></i>
-            <i class="fa-solid fa-video"></i>
-            <i class="fa-sharp fa-solid fa-microphone"></i>
-            <i class="fa-solid fa-face-smile"></i>
-            <i class="fa-solid fa-at"></i>
-            <i class="fa-sharp fa-solid fa-font-case"></i>
-          </div>
+        <div id="msg_icon1">
+          <i class="fa-solid fa-plus"></i>
+          <i class="fa-solid fa-video"></i>
+          <i class="fa-sharp fa-solid fa-microphone"></i>
+          <i class="fa-solid fa-face-smile"></i>
+          <i class="fa-solid fa-at"></i>
+          <i class="fa-sharp fa-solid fa-font-case"></i>
         </div>
       </div>
     </div>
+
       
       <section>
         <i class="fas fa-bars" id="toggleBtn"></i>
