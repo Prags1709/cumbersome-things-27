@@ -4,7 +4,7 @@ const chatSchema = mongoose.Schema({
     channel_name:String,
     name:String,
     message:String,
-    time:{type:Date, default:Date.now}
+    time:String
 })
 
 const ChatModel = mongoose.model("chat",chatSchema)
