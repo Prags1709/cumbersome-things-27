@@ -19,8 +19,12 @@ mroute.post("/sendotp",async(req,res)=>{
             host: 'smtp.gmail.com',
             port: 587,
             auth: {
-                user: '',
-                pass: ''
+
+              
+
+                user: 'birendra.mahto.2023@gmail.com',
+                pass: 'qcbirekrlhpvjjoq'
+
             }
         });
         // const email = req.body.email;
