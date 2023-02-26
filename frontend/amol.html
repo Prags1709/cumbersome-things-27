@@ -18,6 +18,8 @@
       src="https://kit.fontawesome.com/3b8f492a1b.js"
       crossorigin="anonymous"
     ></script>
+    <!-- socket cdn link -->
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
     <script src="./main.js" defer></script>
   </head>
 
@@ -86,12 +88,13 @@
         </div>
       </div>
     </section>
+
     <main id="main">
       <section id="leftNav">
         <section id="UpperSec">
           <section id="leftFirst">
             <section id="onlineSec">
-              <h4>Workspace</h4>
+              <h4 id="workspace">Workspace</h4>
               <span id="greenDotSec">
                 <div id="online"></div>
                 <span id="vikrant">user name</span>
@@ -134,7 +137,7 @@
                 <span id="Channel_icon">
                   <i class="fa-regular fa-hashtag"></i>
                 </span>
-                <span id="general_ch">general</span>
+                <span class="chnl" id="general_ch">general</span>
               </div>
               <div id="panel">
 
@@ -213,102 +216,30 @@
         </section> -->
       </section>
       <div id="midsection">
-        <div id="midSec">
-          <p id="xyBtn" class="msg_chn">
-            <i class="fa-regular fa-hashtag"></i> general
-          </p>
-  
-          <div id="xyModal" class="xmodal">
-            <div class="xmodal-content">
-              <span class="xclose">&times;</span>
-              <h2><i class="fa-regular fa-hashtag"></i> general</h2>
-              <div class="z_star">
-                <i id="z_star" class="fa-regular fa-star"></i>
-                <p class="z_noti">
-                  <i id="z_noti" class="fa-regular fa-bell"></i> Enable
-                  Notification
-                </p>
-              </div>
-              <div class="z_topic">
-                <p>About</p>
-                <p id="z_to">Members</p>
-                <p>Integrations</p>
-                <p>Settings</p>
-              </div>
-              <div class="z_srh">
-                <button id="z_srh_btn">
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <input class="z_srh_input" placeholder="Find Members" />
-              </div>
-              <p class="z_addpeople">
-                <i id="z_addpeople" class="fa-solid fa-user-plus"></i>Add People
+        <section id="midInCenter">
+          <section id="logo">
+            <img src="./images/WE CONNECT.png" alt="WC-LOGO" id="slackLogo" />
+            <section id="heading">
+              <h1>Welcome To We Connect</h1>
+            </section>
+            <section id="mainPara">
+              <p>
+                  We connect brings all your team comunication into once place,makes it
+                all instantly <br />
+                Searchable and available whereever you go.
               </p>
-  
-              <!-- map users -->
-              <div class="map_userdiv">
-                <!-- user1 -->
-                <div class="user_div">
-                  <img
-                    src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
-                  />
-                  <p>Dummy User</p>
-                  <p>Dummyuser@gmail.com</p>
-                </div>
-                <!-- user2 -->
-                <div class="user_div">
-                  <img
-                    src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
-                  />
-                  <p>Dummy User1</p>
-                  <p>Dummyuser@gmail.com</p>
-                </div>
-                <!-- user3 -->
-                <div class="user_div">
-                  <img
-                    src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
-                  />
-                  <p>Dummy User2</p>
-                  <p>Dummyuser@gmail.com</p>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div id="msg_container">
-            <!-- show chat here -->
-          </div>
-  
-          <!-- message div -->
-          <div id="msg_section">
-            <div id="msg_icon">
-              <i class="fa-sharp fa-solid fa-bold"></i>
-              <i class="fa-sharp fa-solid fa-italic"></i>
-              <i class="fa-solid fa-strikethrough"></i>
-              <i class="fa-solid fa-link"></i>
-              <i class="fa-sharp fa-solid fa-list-ol"></i>
-              <i class="fa-sharp fa-solid fa-list-ul"></i>
-              <i class="fa-solid fa-code"></i>
-              <i class="fa-sharp fa-solid fa-code-compare"></i>
-            </div>
-  
-            <!-- message input box -->
-  
-            <form id="msg_form">
-              <input id="msg_inp" type="text" placeholder="message # General" />
-              <input id="msg_submit" type="submit" value="Send" />
-            </form>
-  
-            <div id="msg_icon1">
-              <i class="fa-solid fa-plus"></i>
-              <i class="fa-solid fa-video"></i>
-              <i class="fa-sharp fa-solid fa-microphone"></i>
-              <i class="fa-solid fa-face-smile"></i>
-              <i class="fa-solid fa-at"></i>
-              <i class="fa-sharp fa-solid fa-font-case"></i>
-            </div>
-          </div>
-        </div>
+            </section>
+            <section id="secPara">
+              <p>
+                our aim is to make your working life simpler,more pleasant and
+                more productive
+              </p>
+            </section>
+            <section id="btnSec">
+              <button id="myModal" class="btn">Create Channel</button>
+            </section>
+          </section>
+        </section>
       </div>
       
       <section>
