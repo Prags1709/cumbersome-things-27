@@ -53,7 +53,7 @@
 
 <script>
     let emal=document.querySelector("#email");
-    let user=JSON.parse(localStorage.getItem("user"))
+    let user=JSON.parse(sessionStorage.getItem("user"))
     emal.innerText=user.email;
     let workspace=document.querySelector("#create-workspace");
     workspace.addEventListener("click",(event)=>{

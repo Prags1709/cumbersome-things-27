@@ -8,9 +8,11 @@ app.use(cors())
 const {connection}=require("./config/config")
 const {mroute}=require("./mail/mail")
 const {loginR}=require("./routes/login")
+const {workR}=require("./routes/workspace")
 
 app.use("/mail",mroute)
-app.use("/cred",loginR)
+app.use("/cred",loginR);
+app.use("/channel",workR)
 app.listen(8080,async()=>{
     try {
         await connection

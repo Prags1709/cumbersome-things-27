@@ -1,3 +1,16 @@
+// let getdetails=async()=>{
+//   let data=JSON.parse(sessionStorage.getItem("user"));
+//   let user= await fetch("http//localhost:8080/channel/data",{
+//     method:"POST",
+//     body:JSON.stringify({
+//       email:`${data.email}`
+//     }),
+//     headers:{ 'Content-Type': 'application/json' }
+//   })
+//   console.log(user)
+//   document.querySelector("#workspace").innerText="";
+// }
+// getdetails()
 const toggleBtn = document.querySelector("#toggleBtn");
 const leftNav = document.querySelector("#leftNav");
 
@@ -239,6 +252,7 @@ gene_ch.addEventListener("click",function() {
         </div>
 `
 })
+
 
 
 // done by birendra
