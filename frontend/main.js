@@ -13,6 +13,28 @@
 // }
 // getdetails()
 
+// added by chandan
+let searchbar=document.getElementById("searchBar")
+
+// console.log(searchbar.value)
+
+document.addEventListener("click",function(){
+  console.log(searchbar.value)
+  searchfunction (searchbar.value)
+})
+
+
+async function searchfunction (id){
+  try {
+    let res=await fetch(`http://localhost:8080/search/name/${id}`)
+    let data=await res.json()
+    console.log(data)
+  } catch (error) {
+    
+  }
+}
+// end chandan
+
 const socket = io("http://localhost:8081/",{transports:["websocket"]})
 
 

@@ -9,6 +9,9 @@ const {connection}=require("./config/config")
 const {mroute}=require("./mail/mail")
 const {loginR}=require("./routes/login")
 const {workR}=require("./routes/workspace")
+const {searchrouter}=require("./routes/searchrouter")
+
+app.use("/search",searchrouter)
 
 app.use("/mail",mroute)
 app.use("/cred",loginR);
