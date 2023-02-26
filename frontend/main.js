@@ -13,26 +13,27 @@
 // }
 // getdetails()
 
+
 // added by chandan
-let searchbar=document.getElementById("searchBar")
+//let searchbar=document.getElementById("searchBar")
 
 // console.log(searchbar.value)
 
-document.addEventListener("click",function(){
-  console.log(searchbar.value)
-  searchfunction (searchbar.value)
-})
+// document.addEventListener("click",function(){
+//   console.log(searchbar.value)
+//   searchfunction (searchbar.value)
+// })
 
 
-async function searchfunction (id){
-  try {
-    let res=await fetch(`http://localhost:8080/search/name/${id}`)
-    let data=await res.json()
-    console.log(data)
-  } catch (error) {
+// async function searchfunction (id){
+//   try {
+//     let res=await fetch(`http://localhost:8080/search/name/${id}`)
+//     let data=await res.json()
+//     console.log(data)
+//   } catch (error) {
     
-  }
-}
+//   }
+// }
 // end chandan
 
 const socket = io("http://localhost:8081/",{transports:["websocket"]})
@@ -41,9 +42,12 @@ const socket = io("http://localhost:8081/",{transports:["websocket"]})
 const toggleBtn = document.querySelector("#toggleBtn");
 const leftNav = document.querySelector("#leftNav");
 
+
+//********GET USER NAME*********** */
 window.addEventListener("load",()=>{
-  let name = JSON.parse(localStorage.getItem("user"))
-  console.log(name);
+  let info = JSON.parse(localStorage.getItem("user"))
+  console.log(info);
+  document.querySelector("#vikrant").innerText = info.Name
 })
 
 toggleBtn.addEventListener("click", () => {
@@ -174,6 +178,7 @@ var ch_arr = JSON.parse(localStorage.getItem('channel'))
 console.log(arr);
 console.log(ch_arr);
 let midSec = document.getElementById("midsection");
+//************MULTI CHANNEL ACCESS***********//
 function display(ch_arr){
 
   document.querySelector("#panel").innerHTML="";
@@ -236,9 +241,12 @@ function display(ch_arr){
   const chatForm = document.getElementById("msg_form")
   const chatMessages = document.querySelector("#msg_container")
 
+  //data(username, channel) pass to the backend from here
   const username = document.getElementById("vikrant").innerText;
   const channel = elem.name
   socket.emit("user_channel",{username,channel});
+
+  multichannel(elem.name)
 
   //welcome message
   socket.on("welcome",(msg)=>{
@@ -281,7 +289,7 @@ function display(ch_arr){
 
     p.innerText = message.username;
 
-    p.innerHTML += `<span>${message.time}</span>`;
+    p.innerHTML += `<span>${message.Time_now}</span>`;
 
     div.appendChild(p)
 
@@ -358,6 +366,8 @@ const username = document.getElementById("vikrant").innerText;
 const channel = "general"
 socket.emit("user_channel",{username,channel});
 
+general(channel)
+
 //welcome message
 socket.on("welcome",(msg)=>{
   outputMessage(msg)
@@ -399,7 +409,7 @@ function outputMessage(message){
 
   p.innerText = message.username;
 
-  p.innerHTML += `<span>${message.time}</span>`;
+  p.innerHTML += `<span>${message.Time_now}</span>`;
 
   div.appendChild(p)
 
@@ -413,89 +423,60 @@ function outputMessage(message){
   chatMessages.appendChild(div)
 }
 
-
 })
 
+//****for general******** */
+async function general(channel){
+  try {
+    let res = await fetch(`http://localhost:8081/channel?channel_name=${channel}`,{
+      headers:{
+        'content-type': 'application/json',
+      }
+    })
 
+    let data = await res.json()
+    console.log(data);
+    render(data)
+  } catch (error) {
+    alert("Something went wrong from general channel route")
+    console.log(error);
+  }
+}
 
-// done by birendra
-// document.querySelector("#workspace").innerText=JSON.parse(localStorage.getItem("companyname"))
+//for multi-channel access
+async function multichannel(channel){
+  try {
+    let res = await fetch(`http://localhost:8081/channel?channel_name=${channel}`,{
+      headers:{
+        'content-type': 'application/json',
+      }
+    })
 
-                      //*********WEB-SOCKET**********//
+    let data = await res.json()
+    console.log(data);
+    render(data)
+  } catch (error) {
+    alert("Something went wrong from general channel route")
+    console.log(error);
+  }
+}
 
-// const chatForm = document.getElementById("msg_form")
-// const chatMessages = document.querySelector("#msg_container")
-// //user name part(---often check id----)
-// const username = document.getElementById("vikrant").innerText
+function render(data){
+  let cont = document.querySelector("#msg_container")
+  cont.innerHTML = "";
 
+  let new_data = data.map((elm)=>{
+    return `
+    <div class="message">
+      <p class="meta">
+        ${elm.name}
+        <span>${elm.time}</span>
+      </p>
+      <p class="text">${elm.message}</p>
+    </div>
+    `
+  })
 
-// const ch_name = document.querySelectorAll(".chnl")
-// for(let ch of ch_name){
-//   ch.addEventListener("click",(e)=>{
-//     let channel = e.target.innerText;
-//       console.log(channel);
-//     //  document.getElementById("msg_chn").innerText = val;
-//      //channel = val
+  cont.innerHTML = new_data.join(" ")
+}
 
-//      socket.emit("user_channel",{username,channel});
-//   })
-// }
-
-// //console.log(username,channel);
-
-// //socket.emit("user_channel",{username,channel});
-
-// //welcome message
-// socket.on("welcome",(msg)=>{
-//   outputMessage(msg)
-//   // console.log(msg.text);
-//   // console.log(msg.username);
-//   // console.log(msg.time);
-// })
-
-// socket.on("message_all",(msg)=>{
-//   outputMessage(msg)
-// })
-
-
-// //Chat form
-// chatForm.addEventListener("submit",(e)=>{
-//       e.preventDefault()
-
-//       let msg = e.target.elements.msg_inp.value;
-//       console.log(msg);
-//       msg = msg.trim()
-
-//       if(!msg){
-//           return false;
-//       }
-
-//       socket.emit("chatMessage",msg);
-
-//       e.target.elements.msg_inp.value = "";
-//       e.target.elements.msg_inp.focus()
-// })
-
-
-// function outputMessage(message){
-//   const div = document.createElement("div");
-//   div.classList.add("message");
-
-//   const p = document.createElement("p")
-//   p.classList.add("meta");
-
-//   p.innerText = message.username;
-
-//   p.innerHTML += `<span>${message.time}</span>`;
-
-//   div.appendChild(p)
-
-//   const para =document.createElement("p")
-
-//   para.classList.add("text");
-//   para.innerText = message.text;
-
-//   div.appendChild(para);
-
-//   chatMessages.appendChild(div)
-// }
