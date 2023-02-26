@@ -11,7 +11,7 @@ function login(event) {
         headers: { 'Content-Type': 'application/json' }
     }).then((res) => {
         return (res.json()).then((res) => {
-            localStorage.setItem("user", JSON.stringify(res.user))
+            sessionStorage.setItem("user", JSON.stringify(res.user))
             console.log(res)
             window.location.href = "createworkspace.html"
         })
