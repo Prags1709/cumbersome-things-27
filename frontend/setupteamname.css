@@ -59,9 +59,21 @@ input[type="text"]{
   
 }
 
+#select-workspace{
+    margin-top: 50px;
+    
+}
+label[for="batch"]{
+    font-size: 25px;
+}
 
+#join-button{
+    width: 80px;
+}
 
-
+#join-button:hover{
+    cursor: pointer;
+}
 @media screen and (max-width: 870px){
     #left-content{
         display: none;

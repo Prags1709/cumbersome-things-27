@@ -18,7 +18,7 @@
 
     <div id="main-content">
         <div id="left-content">
-           <h1 id="company-name"></h1>
+            <h1 id="company-name"></h1>
         </div>
         <div id="right-content">
             <h1 id="company-heading">What’s the name of your company or team?
@@ -29,19 +29,20 @@
 
             <input id="name-input" type="text" placeholder="E.g. A1 or A1 Marketing">
             <br>
-            <button id="next" >create</button>
-            <div>
-            <label for="batch">Choose a Batch:</label>
-            <select name="slack" id="slack">
-                 <optgroup label="sriram">
-                      <option value="NXM101">NXM101</option>
-                      <option value="SB101">SB101</option>
-                      <option value="RCT101">RCT101</option>
-                      <option value="JS201">JS201</option>
-                 </optgroup>
-            </select>
-       <button id="join-button">join</button>
-    </div>
+            <button id="next">create</button>
+            <div id="select-workspace">
+                <label  for="batch">Choose a Batch:</label>
+                <select name="slack" id="slack">
+                    <optgroup label="sriram">
+                        <option value="NXM101">NXM101</option>
+                        <option value="SB101">SB101</option>
+                        <option value="RCT101">RCT101</option>
+                        <option value="JS201">JS201</option>
+                    </optgroup>
+                         
+                </select>
+                <button id="join-button">join</button>
+            </div>
         </div>
     </div>
 
@@ -49,30 +50,28 @@
 
 </html>
 <script>
-    let workspace=document.querySelector("#next");
-    workspace.addEventListener("click",(event)=>{
+    let workspace = document.querySelector("#next");
+    workspace.addEventListener("click", (event) => {
         event.preventDefault();
-        let work=document.querySelector("#name-input").value;
+        let work = document.querySelector("#name-input").value;
         console.log(work)
-        let data=JSON.parse(sessionStorage.getItem("user"))
-        data.workspace=work;
+        let data = JSON.parse(sessionStorage.getItem("user"))
+        data.workspace = work;
         console.log(data)
-        fetch("http://localhost:8080/channel/join",{
-            method:"POST",
-            body:JSON.stringify(data),
-            headers:{ 'Content-Type': 'application/json' }
-        }).then((res)=>{
-            return(res.json())
-            // if(res.status=200)
-            // { 
-            // }
-        }).then((data)=>{
-            console.log(data)
+        fetch("http://localhost:8080/channel/join", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json' }
+        }).then((res) => {
+
+            if (res.status = 200) {
+                console.log(data)
+            }
         })
         // let companyname=document.querySelector("#company-name").innerText=name;
         // localStorage.setItem("companyname",JSON.stringify(companyname));
         // window.location.href="setupchannel.html"
     })
 
-   
+
 </script>
