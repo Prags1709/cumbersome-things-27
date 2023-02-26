@@ -64,7 +64,7 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
-// accord
+// acco
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -251,6 +251,7 @@ function display(ch_arr){
   //welcome message
   socket.on("welcome",(msg)=>{
     outputMessage(msg)
+    chatMessages.scrollTop = chatMessages.scrollHeight;
     // console.log(msg.text);
     // console.log(msg.username);
     // console.log(msg.time);
@@ -258,6 +259,7 @@ function display(ch_arr){
 
   socket.on("message_all",(msg)=>{
     outputMessage(msg)
+    chatMessages.scrollTop = chatMessages.scrollHeight;
   })
 
 
@@ -282,25 +284,28 @@ function display(ch_arr){
 
   function outputMessage(message){
     const div = document.createElement("div");
+    div.setAttribute("id","m_div");
     div.classList.add("message");
 
     const p = document.createElement("p")
+    p.setAttribute("class","m_p_name");
     p.classList.add("meta");
 
     p.innerText = message.username;
 
-    p.innerHTML += `<span>${message.Time_now}</span>`;
+    p.innerHTML += `<span span id="m_p_time">${message.Time_now}</span>`;
 
     div.appendChild(p)
 
     const para =document.createElement("p")
-
+    para.setAttribute("class","m_p_text");
     para.classList.add("text");
     para.innerText = message.text;
 
     div.appendChild(para);
 
     chatMessages.appendChild(div)
+    
   }
 
 
@@ -371,6 +376,7 @@ general(channel)
 //welcome message
 socket.on("welcome",(msg)=>{
   outputMessage(msg)
+  chatMessages.scrollTop = chatMessages.scrollHeight;
   // console.log(msg.text);
   // console.log(msg.username);
   // console.log(msg.time);
@@ -378,6 +384,7 @@ socket.on("welcome",(msg)=>{
 
 socket.on("message_all",(msg)=>{
   outputMessage(msg)
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 })
 
 
@@ -402,19 +409,21 @@ chatForm.addEventListener("submit",(e)=>{
 
 function outputMessage(message){
   const div = document.createElement("div");
+  div.setAttribute("id","m_div");
   div.classList.add("message");
 
   const p = document.createElement("p")
+  p.setAttribute("class","m_p_name");
   p.classList.add("meta");
 
   p.innerText = message.username;
 
-  p.innerHTML += `<span>${message.Time_now}</span>`;
+  p.innerHTML += `<span id="m_p_time">${message.Time_now}</span>`;
 
   div.appendChild(p)
 
   const para =document.createElement("p")
-
+  para.setAttribute("class","m_p_text");
   para.classList.add("text");
   para.innerText = message.text;
 
