@@ -14,6 +14,21 @@
 // getdetails()
 
 
+window.addEventListener("load",async ()=>{
+  let data = JSON.parse(sessionStorage.getItem("partial_user"))
+  let user_fetch = await fetch(`http://localhost:8080/channel/data/${data._id}`, {
+    headers: { 'Content-Type': 'application/json' }
+  })
+
+  let u_data = await user_fetch.json()
+  // console.log(u_data);
+  if(user_fetch.ok){
+    document.querySelector("#vikrant").innerText = u_data.Name;
+    document.querySelector("#workspace").innerText = u_data.workspace;
+  }
+
+})
+
 // added by chandan
 //let searchbar=document.getElementById("searchBar")
 
@@ -41,14 +56,6 @@ const socket = io("http://localhost:8081/",{transports:["websocket"]})
 
 const toggleBtn = document.querySelector("#toggleBtn");
 const leftNav = document.querySelector("#leftNav");
-
-
-//********GET USER NAME*********** */
-window.addEventListener("load",()=>{
-  let info = JSON.parse(localStorage.getItem("user"))
-  console.log(info);
-  document.querySelector("#vikrant").innerText = info.Name
-})
 
 toggleBtn.addEventListener("click", () => {
   leftNav.classList.toggle("active");
@@ -246,7 +253,7 @@ function display(ch_arr){
   const channel = elem.name
   socket.emit("user_channel",{username,channel});
 
-  multichannel(elem.name)
+  //multichannel(elem.name)
 
   //welcome message
   socket.on("welcome",(msg)=>{
@@ -284,28 +291,25 @@ function display(ch_arr){
 
   function outputMessage(message){
     const div = document.createElement("div");
-    div.setAttribute("id","m_div");
     div.classList.add("message");
-
+  
     const p = document.createElement("p")
-    p.setAttribute("class","m_p_name");
     p.classList.add("meta");
-
+  
     p.innerText = message.username;
-
-    p.innerHTML += `<span span id="m_p_time">${message.Time_now}</span>`;
-
+  
+    p.innerHTML += `<span>${message.Time_now}</span>`;
+  
     div.appendChild(p)
-
+  
     const para =document.createElement("p")
-    para.setAttribute("class","m_p_text");
+  
     para.classList.add("text");
     para.innerText = message.text;
-
+  
     div.appendChild(para);
-
+  
     chatMessages.appendChild(div)
-    
   }
 
 
@@ -371,7 +375,7 @@ const username = document.getElementById("vikrant").innerText;
 const channel = "general"
 socket.emit("user_channel",{username,channel});
 
-general(channel)
+//general(channel)
 
 //welcome message
 socket.on("welcome",(msg)=>{
@@ -408,22 +412,21 @@ chatForm.addEventListener("submit",(e)=>{
 
 
 function outputMessage(message){
+  //console.log(message);
   const div = document.createElement("div");
-  div.setAttribute("id","m_div");
   div.classList.add("message");
 
   const p = document.createElement("p")
-  p.setAttribute("class","m_p_name");
   p.classList.add("meta");
 
   p.innerText = message.username;
 
-  p.innerHTML += `<span id="m_p_time">${message.Time_now}</span>`;
+  p.innerHTML += `<span>${message.Time_now}</span>`;
 
   div.appendChild(p)
 
   const para =document.createElement("p")
-  para.setAttribute("class","m_p_text");
+
   para.classList.add("text");
   para.innerText = message.text;
 
@@ -435,57 +438,57 @@ function outputMessage(message){
 })
 
 //****for general******** */
-async function general(channel){
-  try {
-    let res = await fetch(`http://localhost:8081/channel?channel_name=${channel}`,{
-      headers:{
-        'content-type': 'application/json',
-      }
-    })
+// async function general(channel){
+//   try {
+//     let res = await fetch(`http://localhost:8081/channel?channel_name=${channel}`,{
+//       headers:{
+//         'content-type': 'application/json',
+//       }
+//     })
 
-    let data = await res.json()
-    console.log(data);
-    render(data)
-  } catch (error) {
-    alert("Something went wrong from general channel route")
-    console.log(error);
-  }
-}
+//     let data = await res.json()
+//     console.log(data);
+//     render(data)
+//   } catch (error) {
+//     alert("Something went wrong from general channel route")
+//     console.log(error);
+//   }
+// }
 
-//for multi-channel access
-async function multichannel(channel){
-  try {
-    let res = await fetch(`http://localhost:8081/channel?channel_name=${channel}`,{
-      headers:{
-        'content-type': 'application/json',
-      }
-    })
+// //for multi-channel access
+// async function multichannel(channel){
+//   try {
+//     let res = await fetch(`http://localhost:8081/channel?channel_name=${channel}`,{
+//       headers:{
+//         'content-type': 'application/json',
+//       }
+//     })
 
-    let data = await res.json()
-    console.log(data);
-    render(data)
-  } catch (error) {
-    alert("Something went wrong from general channel route")
-    console.log(error);
-  }
-}
+//     let data = await res.json()
+//     console.log(data);
+//     render(data)
+//   } catch (error) {
+//     alert("Something went wrong from general channel route")
+//     console.log(error);
+//   }
+// }
 
-function render(data){
-  let cont = document.querySelector("#msg_container")
-  cont.innerHTML = "";
+// function render(data){
+//   let cont = document.querySelector("#msg_container")
+//   cont.innerHTML = "";
 
-  let new_data = data.map((elm)=>{
-    return `
-    <div class="message">
-      <p class="meta">
-        ${elm.name}
-        <span>${elm.time}</span>
-      </p>
-      <p class="text">${elm.message}</p>
-    </div>
-    `
-  })
+//   let new_data = data.map((elm)=>{
+//     return `
+//     <div class="message">
+//       <p class="meta">
+//         ${elm.name}
+//         <span>${elm.time}</span>
+//       </p>
+//       <p class="text">${elm.message}</p>
+//     </div>
+//     `
+//   })
 
-  cont.innerHTML = new_data.join(" ")
-}
+//   cont.innerHTML = new_data.join(" ")
+// }
 

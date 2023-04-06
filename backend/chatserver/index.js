@@ -1,7 +1,7 @@
 const express = require("express")
 const socketio = require("socket.io")
 const http = require("http")
-const {connection} = require("./config/db")
+//const {connection} = require("./config/db")
 const {ChatModel} = require("./model/chat.model")
 const cors = require('cors')
 const moment = require("moment")
@@ -51,27 +51,27 @@ io.on("connection",(socket)=>{
            // socket.join(channel)
             console.log(channel);
             io.to(channel).emit("message_all",formateMessage(username,text))
-            try {
-                let data = new ChatModel({
-                    channel_name:channel,
-                    name:username,
-                    message:text,
-                    time:moment().format('DD MM YYYY h:mm a')
-                })
-                await data.save()
-            } catch (error) {
-                console.log(error);
-            }
+            // try {
+            //     let data = new ChatModel({
+            //         channel_name:channel,
+            //         name:username,
+            //         message:text,
+            //         time:moment().format('DD MM YYYY h:mm a')
+            //     })
+            //     await data.save()
+            // } catch (error) {
+            //     console.log(error);
+            // }
         })
     })
 })
 
 const PORT = 8081;
 server.listen(PORT,async ()=>{
-    try {
-        await connection;   
-    } catch (error) {
-        console.log(error)
-    }
+    // try {
+    //     await connection;   
+    // } catch (error) {
+    //     console.log(error)
+    // }
     console.log(`server running on port ${PORT}`);
 })

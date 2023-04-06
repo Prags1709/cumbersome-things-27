@@ -2,6 +2,7 @@ const express=require("express");
 const workR=express.Router();
 const {wmodel}=require("../models/workspace")
 
+
 workR.post("/join",async(req,res)=>{
     try {
         console.log(req.body)
@@ -12,9 +13,11 @@ workR.post("/join",async(req,res)=>{
         res.send(error.message)
     }
 })
-workR.post("/data",async(req,res)=>{
+
+workR.get("/data/:id",async(req,res)=>{
+    let id = req.params.id
     try {
-        let data= wmodel.findOne(req.body);
+        let data=await wmodel.findOne({_id:id});
     
         res.status(200).send(data)
     } catch (error) {
