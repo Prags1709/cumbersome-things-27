@@ -3,7 +3,8 @@ const registerSchema=mongoose.Schema({
     "Name":String,
     "email":String,
     "mobile":String,
-    "password":String
+    "password":String,
+    "workspace":String
 
 })
 

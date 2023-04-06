@@ -71,7 +71,7 @@ mroute.post("/sendotp",async(req,res)=>{
 mroute.post('/verify', async(req, res) => {
     let otprecived = req.body.otp;
     let otp=await client.HGET("data",otprecived)
-    console.log(otp)
+    //console.log(otp)
     if (otp) {
        let data= await client.hGet("data",otprecived)
        console.log(data)

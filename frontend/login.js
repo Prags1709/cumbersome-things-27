@@ -5,19 +5,27 @@ function login(event) {
     let email = document.querySelector("#email").value;
     let password = document.querySelector("#password").value;
     const Body = { email, password }
-    fetch('http://localhost:8080/cred/login', {
+    login_data(Body)
+}
+
+async function login_data(Body){
+    let res = await fetch('http://localhost:8080/cred/login', {
         method: "POST",
         body: JSON.stringify(Body),
         headers: { 'Content-Type': 'application/json' }
-    }).then((res) => {
-        return (res.json()).then((res) => {
-            sessionStorage.setItem("user", JSON.stringify(res.user))
-            console.log(res)
-            window.location.href = "createworkspace.html"
-        })
-        if (res.status == 200) {
-            console.log(res)
-            window.location.href = "createworkspace.html"
-        }
     })
+
+    
+    if (res.ok) {
+        let out = res.json()
+        out.then((res)=>{
+            console.log(res);
+            sessionStorage.setItem("partial_user",JSON.stringify(res.user))
+            window.location.href = "createworkspace.html"
+        }) 
+    }else{
+        alert("Incredential data, user not match")
+    }
+    
+
 }
