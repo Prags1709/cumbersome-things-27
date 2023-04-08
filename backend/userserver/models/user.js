@@ -5,7 +5,6 @@ const registerSchema=mongoose.Schema({
     "mobile":String,
     "password":String,
     "workspace":String
-
 })
 
 const Rmodel=mongoose.model("regisuser",registerSchema);

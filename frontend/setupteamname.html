@@ -7,42 +7,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./image/WE CONNECT.png">
     <link rel="stylesheet" href="./setupteamname.css">
+    <link rel="stylesheet" href="./main.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <title>Set up team name</title>
 </head>
 
 <body>
 
-    <div id="top">
-
-    </div>
+    <section id="topNav">
+        <div id="nav_left">
+          <i class="far fa-clock clock topNavIcon"></i>
+          <input
+            type="search"
+            name="searchBar"
+            id="searchBar"
+            placeholder="Search Workspace"
+          />
+          <div class="search-bar">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+  
+        <div id="nav_right">
+          <i id="topNavIcon" class="far fa-question-circle question"></i>
+          <img
+            class="mBtn"
+            id="user_img"
+            src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
+          />
+        </div>
+        <!-- The Modal -->
+        <div id="mModal" class="mmodal">
+          <!-- Modal content -->
+          <div class="mmodal-content">
+            <span class="closed">&times;</span>
+            <div class="y_top">
+              <img
+                id="user_image"
+                src="https://cdn.pixabay.com/photo/2012/04/13/21/07/user-33638__340.png"
+              />
+              <div class="y_namediv">
+                <p class="y_name">Username</p>
+                <p class="y_online">
+                  <i id="y_online" class="fa-solid fa-circle"></i> Active
+                </p>
+                <p class="y_email">
+                  <i id="y_email" class="fa-solid fa-envelope"></i
+                  >example@gmail.com
+                </p>
+              </div>
+            </div>
+  
+            <div class="y_status">
+              <p>
+                <i id="y_status" class="fa-solid fa-face-smile"></i> Update your
+                Status
+              </p>
+            </div>
+            <p class="y_rem">Set Yourself As Always</p>
+            <p class="y_rem">Profile</p>
+            <p class="y_rem">Preferances</p>
+            <p class="y_rem">Pause Notification</p>
+            <p class="y_signout">SignOut from Workspace</p>
+          </div>
+        </div>
+    </section>
 
     <div id="main-content">
         <div id="left-content">
             <h1 id="company-name"></h1>
+            <div id="select-workspace">
+                <label for="batch">Choose a Channel</label>
+                <br>
+                <select name="slack" id="slack">
+                    <optgroup id="channels" label="channels">
+                        <!-- <option value="NXM101">NXM101</option>
+                        <option value="SB101">SB101</option>
+                        <option value="RCT101">RCT101</option>
+                        <option value="JS201">JS201</option> -->
+                    </optgroup>
+                </select>
+            </div>
         </div>
         <div id="right-content">
             <h1 id="company-heading">What’s the name of your company or team?
             </h1>
 
-            <p id="details">This will be the name of your Slack workspace – choose something that your team will
+            <p id="details">This will be the name of your We connect Channel – choose something that your team will
                 recognise</p>
-
+            <h2 style="color: rgb(74,21,75);">Create Your New Channel</h2>
             <input id="name-input" type="text" placeholder="E.g. A1 or A1 Marketing">
             <br>
             <button id="next">create</button>
-            <div id="select-workspace">
-                <label  for="batch">Choose a Batch:</label>
-                <select name="slack" id="slack">
-                    <optgroup label="sriram">
-                        <option value="NXM101">NXM101</option>
-                        <option value="SB101">SB101</option>
-                        <option value="RCT101">RCT101</option>
-                        <option value="JS201">JS201</option>
-                    </optgroup>
-                         
-                </select>
-                <button id="join-button">join</button>
-            </div>
         </div>
     </div>
 
@@ -50,29 +109,87 @@
 
 </html>
 <script>
+
     let workspace = document.querySelector("#next");
     workspace.addEventListener("click", (event) => {
         event.preventDefault();
         let work = document.querySelector("#name-input").value;
-        console.log(work)
+        sessionStorage.setItem("channelName", work)
+
         let data = JSON.parse(sessionStorage.getItem("partial_user"))
         data.workspace = work;
-        //console.log(data)
-        fetch("http://localhost:8080/channel/join", {
-            method: "POST",
-            body: JSON.stringify(data),
-            headers: { 'Content-Type': 'application/json' }
-        }).then((res) => {
 
-            if (res.status = 200) {
-                console.log(data)
-                window.location.href="main.html"
-            }
-        })
-        // let companyname=document.querySelector("#company-name").innerText=name;
-        // localStorage.setItem("companyname",JSON.stringify(companyname));
-        // window.location.href="setupchannel.html"
+        addChennal(work)
+        // fetch("http://localhost:8080/channel/join", {
+        //     method: "POST",
+        //     body: JSON.stringify(data),
+        //     headers: { 'Content-Type': 'application/json' }
+        // }).then((res) => {
+
+        //     if (res.status = 200) {
+                
+        //     }
+        // })
+
     })
+
+    //Add channel to the selection
+    async function getChannel() {
+        try {
+            let res = await fetch(`http://localhost:8080/cnl/channelData`, {
+                headers: {
+                    "Content-type": "application/json",
+                }
+            })
+            let cnl_data = await res.json()
+            render(cnl_data)
+        } catch (error) {
+            alert(`Something went wrong`)
+            console.log(error);
+        }
+    }
+    getChannel()
+
+    function render(cnl_data) {
+        let continer = document.querySelector("#channels")
+        continer.innerHTML = ""
+
+        let new_data = cnl_data.map((ele) => {
+            return `
+                <option value=${ele.channel}>${ele.channel}</option>
+            `
+        })
+
+        continer.innerHTML = new_data.join("")
+
+        const chooseChannel = document.querySelector("select")
+        chooseChannel.addEventListener("change", (event) => {
+            const selectedValue = event.target.value;
+            sessionStorage.setItem("channelName", selectedValue)
+
+            window.location.href = "main.html"
+        })
+    }
+
+    async function addChennal(newChennal){
+        try {
+            let res = await fetch(`http://localhost:8080/cnl/addChannel`, {
+                method:"POST",
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body:JSON.stringify({channel: newChennal})
+            })
+            
+            if(res.ok==true){
+                window.location.href = "main.html"
+            }
+        } catch (error) {
+            alert(`Something went wrong`)
+            console.log(error);
+        }
+    }
+
 
 
 </script>

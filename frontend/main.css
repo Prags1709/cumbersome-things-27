@@ -628,7 +628,7 @@
   }
   #msg_container{
     /* background-color: #2196F3; */
-    height: 80%;
+    height: 75%;
     width: 100%;
     overflow: scroll;
   }
@@ -648,7 +648,7 @@
 #msg_section{
  position: absolute;
  bottom: 10px;
-  width: 78%;
+  width: 81%;
   border: 1px solid grey;
   border-radius: 7px;
   /* background-color: #0a8d48; */
@@ -1065,4 +1065,30 @@ section{
   margin-left: 15px;
   color: #616061;
   font-weight: 500;
+}
+
+
+#msg_container .message {
+	padding: 10px;
+	margin-bottom: 15px;
+	background-color: lavender;
+	border-radius: 5px;
+	overflow-wrap: break-word;
+}
+
+#msg_container .message .meta {
+	font-size: 15px;
+	font-weight: bold;
+	color: black;
+	opacity: 0.7;
+	margin-bottom: 7px;
+}
+
+#msg_container .message .meta span {
+	color: #777;
+  margin-left: 10px;
+}
+
+#msg_container .message .text {
+  font-size: large;
 }

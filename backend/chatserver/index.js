@@ -2,7 +2,7 @@ const express = require("express")
 const socketio = require("socket.io")
 const http = require("http")
 //const {connection} = require("./config/db")
-const {ChatModel} = require("./model/chat.model")
+const { ChatModel } = require("./model/chat.model")
 const cors = require('cors')
 const moment = require("moment")
 
@@ -15,11 +15,11 @@ app.use(cors());
 const server = http.createServer(app)
 const io = socketio(server)
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("WELCOME");
 })
 
-app.get("/channel",async (req,res)=>{
+app.get("/channel", async (req, res) => {
     let query = req.query;
     try {
         let data = await ChatModel.find(query)
@@ -32,23 +32,31 @@ app.get("/channel",async (req,res)=>{
 
 const botename = "We Connect"
 
-io.on("connection",(socket)=>{
+io.on("connection", (socket) => {
 
-    console.log("one client joined");
-    socket.on("user_channel",({username,channel})=>{
-       
+    socket.on("user_channel", ({ username, channel }) => {
+
         socket.join(channel)
-        socket.emit("welcome",formateMessage(botename, "Welcome to we connect"))
+        socket.emit("welcome", formateMessage(botename, "Welcome to we connect"))
 
-        socket.on("chatMessage",async (text)=>{
-            io.to(channel).emit("message_all",formateMessage(username,text))
-            
+        //Broadcast to other channel
+        socket.broadcast.to(channel).emit("message_all", formateMessage(botename, `${username} has join the chat`))
+
+        socket.on("chatMessage", async (text) => {
+            io.to(channel).emit("message_all", formateMessage(username, text))
+
+        })
+
+        socket.on("disconnect", () => {
+
+            io.to(channel).emit("message_all", formateMessage(botename, `${username} has left the chat`))
+
         })
     })
 })
 
 const PORT = 8081;
-server.listen(PORT,async ()=>{
-    
+server.listen(PORT, async () => {
+
     console.log(`server running on port ${PORT}`);
 })
