@@ -18,7 +18,7 @@
 - HTML
 - CSS
 - Redis
-- Boostrap
+- Socket.io
 
 ## Modules
 
@@ -31,6 +31,8 @@
 * Customer Features:
     * Registering themselves with application, and logging in to get the valid session token
     * create channel
+    * Real-time messaging using Socket.io
+    * Channels for group messaging
     * Only logged in users can communicate.
 
  
