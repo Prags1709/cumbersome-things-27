@@ -73,6 +73,7 @@ otp_inputs.forEach(
             .then(
                 (res) => {
                     if (res.status == 200) {
+                        alert("OTP has been sent to your email")
                         document.querySelector(".data").style.display="none"
                         verfEle.style.display = 'block';
                         emailpartialEle.value = "***" + email.slice(3)

@@ -51,10 +51,41 @@ img {
 
   display: none;
   width: 400px;
-  height: 100vh;
+  height: 20vh;
   margin: 20% auto;
 
 }
+
+.verify-button{
+  display: block;
+  background-color: rgb(30, 214, 30);
+  border: none;
+  color: hsl(0, 0, 100);
+  text-decoration: none;
+  margin: 20px 0;
+  padding: 15px 25px;
+  border-radius: 5px;
+  position: relative;
+  font-size: medium;
+  color: white;
+  font-weight: bold;
+} 
+.verify-button:hover::after {
+    background: hsla(0, 0, 0, 0.1);
+    box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
+  }
+.verify-button::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-in-out;
+    box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0), 0 3px 3px hsla(0, 0, 0, .2);
+    border-radius: 5px;
+  }
 
 .otp-input-fields {
   margin: auto;

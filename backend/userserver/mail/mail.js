@@ -19,11 +19,8 @@ mroute.post("/sendotp",async(req,res)=>{
             host: 'smtp.gmail.com',
             port: 587,
             auth: {
-
-              
-
-                user: 'birendra.mahto.2023@gmail.com',
-                pass: 'qcbirekrlhpvjjoq'
+                user: 'amolthakare630@gmail.com',
+                pass: 'gpckhcmostfmxzii'
 
             }
         });
@@ -37,11 +34,11 @@ mroute.post("/sendotp",async(req,res)=>{
         }
         // Message object
         let message = {
-            from: 'sriramalavalapati01@gmail.com',
+            from: 'amolthakare630@gmail.com',
             to: `${req.body.email}`,
             subject: 'email testing 2',
             text: 'Hi rajanna',
-            html: `<p><b>Hello</b> to Mr.chaitanya this is ur otp for weconnect ${otp}</p>`
+            html: `<p><b>Hello</b> From We connect this is ur otp for weconnect ${otp}</p>`
         };
     
         transporter.sendMail(message, async(err, info) => {

@@ -78,6 +78,15 @@ Form
     text-shadow: 0 2px 3px hsla(0, 0, 0, 0.2);
 }
 
+#login {
+  margin-top: 10px;
+  padding: 3% 41%;
+  background-color: #e7ca71;
+  box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
+  border-radius: 5px;
+  background: hsla(0, 0, 0, 0.1);
+  font-weight: bold;
+}
 /*--------------------
 Signup
 --------------------*/
