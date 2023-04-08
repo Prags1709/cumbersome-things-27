@@ -1087,6 +1087,8 @@ section{
 #msg_container .message .meta span {
 	color: #777;
   margin-left: 10px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 #msg_container .message .text {
