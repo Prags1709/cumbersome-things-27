@@ -6,48 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="./image/WE CONNECT.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <script src="https://kit.fontawesome.com/c8503353a1.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3b8f492a1b.js" crossorigin="anonymous"></script>
     <title>Login</title>
     <style>
         #error {
             display: none;
-        }
-        #login_script{
-            width: 400px;
-            text-align: center;
-            margin: 40px auto;
-            background-color: palevioletred;
-            padding: 10px;
-        }
-        input[type="email"],input[type="password"]{
-            width: 80%;
-            margin: 15px auto;
-            font-size: 20px;
-            border-radius: 7px;
-            padding: 10px;
-        }
-        input[type="submit"]{
-           width: 40%;
-           margin: 15px auto;
-           font-size: 20px;
-           border-radius: 10px;
-           padding: 5px;
-        }
-        input[type="submit"]:hover{
-            cursor: pointer;
         }
         
     </style>
 </head>
 
 <body>
-    <form id="login_script" class="login">
+    <div class="aaa">
+
+        <div class="signup">
+          <div class="signup-classic">
+            <div style="text-align: center;">
+                <img id="immg"src="./images/WE CONNECT.png"/>
+                <h1>Login</h1>
+            </div>
+            
+            <form id="login_script" class="login">
+              <fieldset class="emaill">
+                <input id="email" type="email" placeholder="email" />
+              </fieldset>
+              <fieldset class="passwordd">
+                <input id="password" type="password" placeholder="password" />
+              </fieldset>
+              <button type="submit" class="btn" id="login_btn">Log in</button>
+              <p id="pppp">User not Registered <a href="./Register.html" style="text-decoration-line: underline; background-color: #f4f1e8;">Sign Up</a></p> 
+    
+            </form>
+          </div>
+        </div>
+      </div>
+    <!-- <form id="login_script" class="login">
            <h1>Login</h1>
         <input type="email" placeholder="Enter Your Email ID" id="email" />
         <input type="password" placeholder="Enter Your Password" id="password" />
         <input type="submit" value="Log in" id="login_btn">
 
-        <!-- <div id="snackbar">Login Succesful</div> -->
-    </form>
+        <div id="snackbar">Login Succesful</div>
+    </form> -->
     <h2 id="error"></h2>
 </body>
 <script src="login.js"></script>
