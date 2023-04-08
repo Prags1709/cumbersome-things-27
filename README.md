@@ -8,6 +8,10 @@
 - It is a collabrative project built by team of five members in 5 days. 
 - This app allows users to create channels and send messages to each other in real-time.
 
+##Deploy Link
+- Netlify website link-> https://dainty-medovik-09d009.netlify.app/
+- render Backend link-> https://weconnectslack.onrender.com
+- render Socket link -> https://socketbe-prags1709.onrender.com
 
 ## Techstack
 
@@ -44,5 +48,4 @@
 - [@Chandan Kumar V](https://github.com/Vchandankumarr)
 
 
-##Deploy Link
-- Netlify -> https://comforting-nougat-70fd30.netlify.app/index.html // we will have to update this
+
