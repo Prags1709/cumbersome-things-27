@@ -60,11 +60,20 @@ input[type="text"]{
 }
 
 #select-workspace{
+    text-align: center;
+    /* border: 1px solid red; */
     margin-top: 50px;
-    
 }
 label[for="batch"]{
     font-size: 25px;
+    color: white;
+}
+
+#slack {
+    width: 80%;
+    height: 35px;
+    margin-top: 30px;
+    font-size: large;
 }
 
 #join-button{

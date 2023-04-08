@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
     <link rel="stylesheet" href="./main.css" />
+    <link rel="icon" type="image/x-icon" href="./image/WE CONNECT.png">
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -214,33 +216,45 @@
           <span id="logoutText">Logout</span>
         </section> -->
       </section>
-      <div id="midsection">
-        <section id="midInCenter">
-          <section id="logo">
-            <img src="./images/WE CONNECT.png" alt="WC-LOGO" id="slackLogo" />
-            <section id="heading">
-              <h1>Welcome To We Connect</h1>
-            </section>
-            <section id="mainPara">
-              <p>
-                  We connect brings all your team comunication into once place,makes it
-                all instantly <br />
-                Searchable and available whereever you go.
-              </p>
-            </section>
-            <section id="secPara">
-              <p>
-                our aim is to make your working life simpler,more pleasant and
-                more productive
-              </p>
-            </section>
-            <section id="btnSec">
-              <button id="myModal" class="btn">Create Channel</button>
-            </section>
-          </section>
-        </section>
+      <div id="midSec">
+        <p class="msg_chn" id="cnl">
+          <i class="fa-regular fa-hashtag"></i> NXM
+        </p>
+
+        <div id="msg_container">
+          <!-- show chat here -->
+        </div>
+
+        <!-- message div -->
+        <div id="msg_section">
+          <div id="msg_icon">
+            <i class="fa-sharp fa-solid fa-bold"></i>
+            <i class="fa-sharp fa-solid fa-italic"></i>
+            <i class="fa-solid fa-strikethrough"></i>
+            <i class="fa-solid fa-link"></i>
+            <i class="fa-sharp fa-solid fa-list-ol"></i>
+            <i class="fa-sharp fa-solid fa-list-ul"></i>
+            <i class="fa-solid fa-code"></i>
+            <i class="fa-sharp fa-solid fa-code-compare"></i>
+          </div>
+
+          <!-- message input box -->
+
+          <form id="msg_form">
+            <input style="font-size: large; font-weight: bold;" id="msg_inp" type="text" placeholder="message # General" required autocomplete="off"/>
+            <button style="width: 100px; height: 35px;" class="btn"> Send</button>
+          </form>
+
+          <div id="msg_icon1">
+            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-video"></i>
+            <i class="fa-sharp fa-solid fa-microphone"></i>
+            <i class="fa-solid fa-face-smile"></i>
+            <i class="fa-solid fa-at"></i>
+            <i class="fa-sharp fa-solid fa-font-case"></i>
+          </div>
+        </div>
       </div>
-      
       <section>
         <i class="fas fa-bars" id="toggleBtn"></i>
       </section>
