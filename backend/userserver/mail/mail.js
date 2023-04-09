@@ -1,7 +1,7 @@
 const express=require("express");
 const mroute=express.Router();
 const bcrypt = require('bcrypt');
-const {client}=require("../redis/redis")
+ const {client}=require("../redis/redis")
 const nodemailer = require('nodemailer');
 const {Rmodel}=require("../models/user")
 // Generate SMTP service account from ethereal.email
@@ -46,7 +46,7 @@ mroute.post("/sendotp",async(req,res)=>{
                 console.log('Error occurred. ' + err.message);
                 return process.exit(1);
             }
-            await client.SETEX("otp",500,otp)
+            await client.set("otp",otp)
             bcrypt.hash(password,5, async(err, hash)=>{
                 if(err)
                 {
@@ -54,7 +54,7 @@ mroute.post("/sendotp",async(req,res)=>{
                 }else{
                     req.body.password=hash
                     console.log(req.body)
-            await client.hSetNX("data",`${otp}`,JSON.stringify(req.body))
+            await client.hset("data",`${otp}`,JSON.stringify(req.body))
     res.status(200).send("otp send to mail")
                 }
             // console.log('Message sent: %s', info.messageId);
@@ -67,12 +67,16 @@ mroute.post("/sendotp",async(req,res)=>{
 
 mroute.post('/verify', async(req, res) => {
     let otprecived = req.body.otp;
-    let otp=await client.HGET("data",otprecived)
-    //console.log(otp)
-    if (otp) {
-       let data= await client.hGet("data",otprecived)
+    let ot=await client.hget("data",otprecived)
+   
+    // console.log(otp)
+    if (ot) {
+       let data= await client.hget("data",otprecived)
+       
        console.log(data)
        data=JSON.parse(data)
+       await client.hdel('data',`${ot}`)
+       await client.getdel('otp')
        let Data=new Rmodel(data)
        await Data.save()
        res.send("Verfied");

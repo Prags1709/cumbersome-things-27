@@ -136,7 +136,7 @@
     //Add channel to the selection
     async function getChannel() {
         try {
-            let res = await fetch(`http://localhost:8080/cnl/channelData`, {
+            let res = await fetch(`https://nice-cyan-chiton-vest.cyclic.app/cnl/channelData`, {
                 headers: {
                     "Content-type": "application/json",
                 }
@@ -173,7 +173,7 @@
 
     async function addChennal(newChennal){
         try {
-            let res = await fetch(`http://localhost:8080/cnl/addChannel`, {
+            let res = await fetch(`https://nice-cyan-chiton-vest.cyclic.app/cnl/addChannel`, {
                 method:"POST",
                 headers: {
                     "Content-type": "application/json",

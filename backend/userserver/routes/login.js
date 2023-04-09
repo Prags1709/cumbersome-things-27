@@ -4,13 +4,13 @@ const jwt=require("jsonwebtoken")
 const loginR=express.Router();
 const cookieParser = require('cookie-parser')
 const {Rmodel}=require("../models/user");
-const { client } = require("../redis/redis");
+// const { client } = require("../redis/redis");
 
 loginR.post("/login",async(req,res)=>{
     let {email,password}=req.body
     try {
        let data= await Rmodel.findOne({email}) 
-       //console.log(data)
+       console.log(data)
        if(data){
         bcrypt.compare(password, data.password, async(err, result)=>{
             if(result){

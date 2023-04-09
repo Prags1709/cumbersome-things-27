@@ -11,7 +11,7 @@ const { time } = require("console")
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin:"*"}))
 const server = http.createServer(app)
 const io = socketio(server)
 

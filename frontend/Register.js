@@ -65,7 +65,7 @@ otp_inputs.forEach(
     Body={Name,email,mobile,password}
     console.log(Body)
     if (regex.test(Body.email)) {
-        fetch('http://localhost:8080/mail/sendotp', {
+        fetch('https://nice-cyan-chiton-vest.cyclic.app/mail/sendotp', {
             method: "POST",
             body: JSON.stringify(Body),
             headers: { 'Content-Type': 'application/json' }
@@ -112,7 +112,7 @@ otp_inputs.forEach(
  function verifyOTP() {
 
     console.log("hi")
-    fetch('http://localhost:8080/mail/verify',
+    fetch('https://nice-cyan-chiton-vest.cyclic.app/mail/verify',
         {
             method: "POST",
             body: JSON.stringify({

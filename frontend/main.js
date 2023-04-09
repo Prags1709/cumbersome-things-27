@@ -7,7 +7,7 @@ const socket = io("https://socketbe-prags1709.onrender.com/",{transports:["webso
 
 window.addEventListener("load",async ()=>{
   
-  let user_fetch = await fetch(`http://localhost:8080/channel/data/${data._id}`, {
+  let user_fetch = await fetch(`https://nice-cyan-chiton-vest.cyclic.app/channel/data/${data._id}`, {
     headers: { 'Content-Type': 'application/json' }
   })
 
