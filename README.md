@@ -1,6 +1,8 @@
 # cumbersome-things-27
 
-
+<p align="center">
+    <img src="/highlights_img/we connect.png" width="200" height="200" />
+</p>
 
 ## Cloning of Slack application
 
@@ -124,6 +126,19 @@ POST  /socket_api/channel
 
 - User Module
 - Workspace Module
+
+| `Project Highlights` |
+| :------------------: | 
+
+ <div align = "center">
+  
+ <img src="/highlights_img/we-1.png" width="700" height="350" />
+ <img src="/highlights_img/we-2.png" width="700" height="350" />
+ <img src="/highlights_img/we-3.png" width="700" height="350" />
+ <img src="/highlights_img/we-4.png" width="700" height="350" />
+ <img src="/highlights_img/we-5.png" width="700" height="350" />
+  
+<div/>
  
 
 | `Authors` |
