@@ -22,6 +22,7 @@ window.addEventListener("load",async ()=>{
 let channel = sessionStorage.getItem("channelName")
 let username = data.Name
 
+document.querySelector("#vikrant").innerText = data.Name;
 document.querySelector("#workspace").innerText = channel;
 document.querySelector("#cnl").innerText = channel;
 
