@@ -19,7 +19,7 @@
 <img src="https://github.com/PrinceCorwin/Useful-tech-icons/blob/main/images/HTML.png" alt="html" width="55" height="55"/>
 <img src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" width="50" height="55"/>
 <img src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="js" width="50" height="50"/>
-  <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/TypeScript.svg" alt="ts" width="50" height="50"/>
+  <img src="https://socket.io/images/logo.svg" alt="socket.io" width="50" height="50"/>
 <img src="https://raw.githubusercontent.com/PrinceCorwin/Useful-tech-icons/main/images/nodejs.png" alt="nodejs" width="50" height="50"/>
 <img src="https://res.cloudinary.com/kc-cloud/images/f_auto,q_auto/v1651772163/expressjslogo/expressjslogo.webp?_i=AA" alt="express" width="50" height="50"/>
  <img src="https://raw.githubusercontent.com/PrinceCorwin/Useful-tech-icons/main/images/mongodb-leaf.png" alt="mongo" width="50" height="50"/> 
@@ -29,21 +29,22 @@
 </p>
 <hr>
 
-## Features 
--  Authentication
--  APIValidation
--  Responsive
--  Cross Platform
--  Signup/signin/Logout
--  Appointment Booking 
--  Appointment Cancelation
--  Admin can perform all crud operations
+## Features
+
+* User  authentication & validation.
+* Customer Features:
+    * Registering themselves with application, and logging in to get the valid session token
+    * create channel
+    * Real-time messaging using Socket.io
+    * Channels for group messaging
+    * Only logged in users can communicate.
+
 
 ## Run Locally
 ### Clone this Project
 
 ```
-https://github.com/faraz412/cozy-passenger-4798.git
+https://github.com/Prags1709/cumbersome-things-27.git
 ```
 
 ### Install npm Packages
@@ -55,11 +56,12 @@ npm i --global
 ### Go to Backend Folder
 ```javascript
 cd backend
+cd userserver
 ```
 
 ### Run Server
 ```javascript
-npx nodemon index.js
+npx run server
 ```
 ### Runs the project in the development mode
 
@@ -68,8 +70,6 @@ npx nodemon index.js
 
 ### Environment Variables Required
 `mongoURL`
-
-`key`
 
 `PORT`
 
@@ -86,45 +86,56 @@ npx nodemon index.js
 <img src="https://4008838.fs1.hubspotusercontent-na1.net/hubfs/4008838/mogoose-logo.png" alt="mongoose.png" width="70" height="70"/>     
 <img src="https://i0.wp.com/community.nodemailer.com/wp-content/uploads/2015/10/n2-2.png?fit=422%2C360&ssl=1" alt="nodemailer" width="50" height="70"/>
 <img src="https://user-images.githubusercontent.com/13700/35731649-652807e8-080e-11e8-88fd-1b2f6d553b2d.png" alt="nodemon.png" width="50" height="50"/>
-<img src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci8wNmFkMDUxNjc0NDA0NTVjOTQzYzE4NWIwNmM4NjBmMD9zaXplPTEwMCZkZWZhdWx0PXJldHJvIn0.fJ4Me0BC-QzMrHKVqZzMx9CzgTcYb06jEt9nk9NxC2c" alt="otpgen.png" width="50" height="50"/>
 <img src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png" alt="redis" width="50" height="50"/>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKZRJJRPM1V6XKXBLn2fnsy5VwmLW1uO9ixCfCYiZRwWeLKe2ukB17uzxRRyhZElgzn_E&usqp=CAU" alt="twilio" width="70" height="50"/>
+<img src="https://socket.io/images/logo.svg" alt="socket" width="70" height="50"/>
 </p>
+
+## API Endpoints
+   #### Welcome
+```javascript
+GET  /api/
+```
+  #### Email Verification
+```javascript
+POST  /api/mail/verify
+```
+  #### User Signup
+```javascript
+POST  /api/mail/sendotp
+```
+  #### User Login
+```javascript
+POST  /api/cred/login
+```
+#### Create New Channel
+```javascript
+POST  /api/cnl/addChannel
+```
+#### Create New Channel
+```javascript
+POST  /api/cnl/addChannel
+```
+#### Socket
+```javascript
+POST  /socket_api/channel
+```
    
-
-## Techstack
-
-- JavaScript
-- MongoDB
-- Nodejs
-- Express
-- HTML
-- CSS
-- Redis
-- Socket.io
-
 ## Modules
 
 - User Module
 - Workspace Module
-
-## Features
-
-* User  authentication & validation.
-* Customer Features:
-    * Registering themselves with application, and logging in to get the valid session token
-    * create channel
-    * Real-time messaging using Socket.io
-    * Channels for group messaging
-    * Only logged in users can communicate.
-
  
- ## Contributors
-- [@Amol Thakare](https://github.com/amolthakare)
-- [@Birendra Mahto](https://github.com/bire210)
-- [@Pragatheeswaran S ](https://github.com/Prags1709)
-- [@sriram](https://github.com/sriramalavalapati3)
-- [@Chandan Kumar V](https://github.com/Vchandankumarr)
 
+| `Authors` |
+| :-------: | 
 
+ [@Pragatheeswaran S ](https://github.com/Prags1709) 
+ 
+ [@Birendra Mahto](https://github.com/bire210)
+ 
+ [@Amol Thakare](https://github.com/amolthakare)
+ 
+ [@sriram](https://github.com/sriramalavalapati3)
+ 
+ [@Chandan Kumar V](https://github.com/Vchandankumarr)
 
