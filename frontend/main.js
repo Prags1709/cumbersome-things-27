@@ -89,3 +89,43 @@ socket.emit("user_channel", { username, channel });
    
   }
 
+
+
+  //LOGOUT
+
+  let logout = document.querySelector("#logout")
+  logout.addEventListener("click",()=>{
+    // Swal.fire(
+    //   'Logout Successfully',
+    //   'You clicked the button!',
+    //   'success'
+    // )
+    
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to sign out of your account?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your account has been logged out successfully',
+          showConfirmButton: true,
+          confirmButtonText: 'Yes'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "./login.html"
+          }
+        })
+      }
+    })
+
+  })
+
+  

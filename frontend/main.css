@@ -1094,3 +1094,18 @@ section{
 #msg_container .message .text {
   font-size: large;
 }
+
+#logout {
+  margin-left: 20px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: medium;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#logout:hover {
+  background-color: #5d3c5f;
+  color: white;
+}
