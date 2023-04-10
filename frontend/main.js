@@ -120,7 +120,7 @@ socket.emit("user_channel", { username, channel });
           confirmButtonText: 'Yes'
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.href = "./login.html"
+            window.location.href = "./index.html"
           }
         })
       }
