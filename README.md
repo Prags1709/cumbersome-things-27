@@ -133,7 +133,7 @@ POST  /socket_api/channel
  <div align = "center">
   
  <img src="/highlights_img/we-1.png" width="700" height="350" />
- <img src="/highlights_img/we-2.png" width="700" height="350" />
+ <img src="/highlights_img/wec-2.png" width="700" height="350" />
  <img src="/highlights_img/we-3.png" width="700" height="350" />
  <img src="/highlights_img/we-4.png" width="700" height="350" />
  <img src="/highlights_img/we-5.png" width="700" height="350" />
