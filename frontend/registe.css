@@ -3,6 +3,9 @@
 *::after {
   box-sizing: border-box;
 }
+body{
+  background-color: #4a154b;
+}
 /*--------------------
 Buttons
 --------------------*/
@@ -13,21 +16,22 @@ Buttons
   font-size: 16px;
   color: #052639;
 }
-.submit-button{
+.btn {
   display: block;
-  background-color: #e7ca71;
+  background-color: #4a154b;
   color: hsl(0, 0, 100);
   text-decoration: none;
   margin: 20px 0;
   padding: 15px 15px;
   border-radius: 5px;
   position: relative;
+  
 } 
-.submit-button:hover::after {
+.btn:hover::after {
     background: hsla(0, 0, 0, 0.1);
     box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
   }
-.submit-button::after {
+.btn::after {
     content: '';
     position: absolute;
     z-index: 1;
@@ -45,14 +49,14 @@ Buttons
 /*--------------------
 Form
 --------------------*/
-.login fieldset {
+.form fieldset {
     border: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 15px 0;
     position: relative;
      
 }
-.login input {
+.form input {
     width: 100%;
     height: 48px;
     color: hsl(0, 0, 20);
@@ -64,12 +68,13 @@ Form
     box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
     vertical-align: top;
 }
-.login button {
+.form button {
     cursor: pointer;
     width: 100%;
-    color: #052639;
+    color: white;
+    margin-top: -5px;
     outline: none!important;
-    background-color: #e7ca71;
+    background-color: #4a154b;
     /* background: linear-gradient(-5deg, hsl(86, 61%, 44%), hsl(86, 65%, 54%)); */
     border: none;
     text-transform: uppercase;
@@ -78,22 +83,13 @@ Form
     text-shadow: 0 2px 3px hsla(0, 0, 0, 0.2);
 }
 
-#login {
-  margin-top: 10px;
-  padding: 3% 41%;
-  background-color: #e7ca71;
-  box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
-  border-radius: 5px;
-  background: hsla(0, 0, 0, 0.1);
-  font-weight: bold;
-}
 /*--------------------
 Signup
 --------------------*/
-.aaa{
-  /* margin-top: 25%; */
+/* .aaa{
+  margin-top: 25%;
   position: relative;
-}
+} */
 .aaa img{
   width: 100%;
   height: 100vh;
@@ -101,8 +97,9 @@ Signup
 .signup {
   margin: auto;
   border: 2px solid #052639;
-  margin-top: 1%;
-  width: 400px;
+  /* z-index: 1; */
+  width: 800px;
+  margin-top: 3%;
   background: hsl(0, 0, 100);
   border-radius: 10px;
   box-shadow: 0 3px 25px hsla(0, 0, 0, 0.2);
@@ -110,33 +107,54 @@ Signup
   display: flex;
   
 }
-#immg{
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
+
+
+.signup-connect
+{
+  width: 50%;
+  padding: 30px 50px;
+  background-color: #BAABBC;
+  text-align: center;
 }
+
+.signup-connect img
+{
+  margin-top: 30px;
+  width: 200px;
+  border-radius: 50%;
+  height: 200px;
+}
+
 .signup-classic
 {
-  width: 100%;
-  padding: 10px 50px;
-  background-color: #f4f1e8;
+  width: 50%;
+  padding: 30px 50px;
+  background-color: white;
+}
+
+.signup-connect h1 {
+    color: #052639;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 3px hsla(0, 0, 0, 0.1);
 }
 
 .signup-classic h1{
     font-weight: bolder;
-    color: #052639;
-    font-size: 25px;
-    margin-top: 5px;
-    margin-bottom: 15px;
+    color: #4a154b;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     text-shadow: 0 2px 3px hsla(0, 0, 0, 0.1);
+
 }
 .signup-classic fieldset::after {
-   
     content: '\f007';
     font-family: FontAwesome;
     position: absolute;
     right: 15px;
-    top: 10px;
+    top: 12px;
     z-index: 2;
     width: 20px;
     color: hsla(0, 0, 0, .2);
@@ -157,4 +175,16 @@ Signup
   content: "\f095";
   
   opacity: 0.5;
+}
+
+#pass_show{
+  margin-top: -10px;
+  display: flex;
+}
+
+.slogen{
+  font-style: italic;
+  margin-top: 20%;
+  font-size: 25px;
+  text-align: center;
 }
