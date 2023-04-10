@@ -2,6 +2,7 @@ const emailEle = document.querySelector('.email');
 const nameEle=document.querySelector(".name");
 const mobileEle=document.querySelector(".mobile")
 const passwordEle=document.querySelector("#password")
+const confirm = document.querySelector("#confirm_password");
 const verfEle = document.querySelector('.verification');
 const successEle = document.querySelector('.success');
 const errorEle = document.querySelector('.error');
@@ -12,6 +13,8 @@ const regex = new RegExp('[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,3}');
 let otp_check = '';
 let Body={}
 
+// let submit = document.querySelector(".submit-button");
+// let 
 
 var check = function() {
 if (document.getElementById('password').value ==
@@ -62,6 +65,7 @@ otp_inputs.forEach(
     let Name=nameEle.value;
     let mobile=mobileEle.value;
     let password=passwordEle.value;
+    let conform = confirm.value;
     Body={Name,email,mobile,password}
     console.log(Body)
     if (regex.test(Body.email)) {
@@ -72,7 +76,10 @@ otp_inputs.forEach(
         })
             .then(
                 (res) => {
-                    if (res.status == 200) {
+                    if(password!=conform){
+                        alert("password is not matching");
+                    }
+                    else if (res.status == 200) {
                         alert("OTP has been sent to your email")
                         document.querySelector(".data").style.display="none"
                         verfEle.style.display = 'block';

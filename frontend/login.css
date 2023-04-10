@@ -3,6 +3,9 @@
 *::after {
   box-sizing: border-box;
 }
+body{
+  background-color: #4a154b;
+}
 /*--------------------
 Buttons
 --------------------*/
@@ -15,7 +18,7 @@ Buttons
 }
 .btn {
   display: block;
-  background-color: #e7ca71;
+  background-color: #4a154b;
   color: hsl(0, 0, 100);
   text-decoration: none;
   margin: 20px 0;
@@ -42,17 +45,18 @@ Buttons
 
 
 
+
 /*--------------------
 Form
 --------------------*/
-.login fieldset {
+.form fieldset {
     border: none;
     padding: 0;
     margin: 20px 0;
     position: relative;
      
 }
-.login input {
+.form input {
     width: 100%;
     height: 48px;
     color: hsl(0, 0, 20);
@@ -64,12 +68,12 @@ Form
     box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
     vertical-align: top;
 }
-.login button {
+.form button {
     cursor: pointer;
     width: 100%;
-    color: #052639;
+    color: white;
     outline: none!important;
-    background-color: #e7ca71;
+    background-color: #4a154b;
     /* background: linear-gradient(-5deg, hsl(86, 61%, 44%), hsl(86, 65%, 54%)); */
     border: none;
     text-transform: uppercase;
@@ -81,18 +85,9 @@ Form
 /*--------------------
 Signup
 --------------------*/
-#sign {
-  margin-top: 10px;
-  padding: 4% 41%;
-  background-color: #e7ca71;
-  box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
-  border-radius: 5px;
-  text-decoration: none;
-}
-
 .aaa{
   /* margin-top: 25%; */
-  position: relative;
+  /* position: relative; */
 }
 .aaa img{
   width: 100%;
@@ -101,8 +96,9 @@ Signup
 .signup {
   margin: auto;
   border: 2px solid #052639;
+  /* z-index: 1; */
+  width: 800px;
   margin-top: 5%;
-  width: 400px;
   background: hsl(0, 0, 100);
   border-radius: 10px;
   box-shadow: 0 3px 25px hsla(0, 0, 0, 0.2);
@@ -110,25 +106,46 @@ Signup
   display: flex;
   
 }
-#immg{
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
+
+
+.signup-connect
+{
+  width: 50%;
+  padding: 30px 50px;
+  background-color: #BAABBC;
+  text-align: center;
 }
+
+.signup-connect img
+{
+  width: 200px;
+  border-radius: 50%;
+  height: 200px;
+}
+
 .signup-classic
 {
-  width: 100%;
+  width: 50%;
   padding: 30px 50px;
-  background-color: #f4f1e8;
+  background-color: white;
+}
+
+.signup-connect h1 {
+    color: #052639;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 3px hsla(0, 0, 0, 0.1);
 }
 
 .signup-classic h1{
     font-weight: bolder;
-    color: #052639;
+    color: #4a154b;
     font-size: 30px;
-    margin-top: 23px;
-    margin-bottom: 43px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     text-shadow: 0 2px 3px hsla(0, 0, 0, 0.1);
+
 }
 .signup-classic fieldset::after {
     content: '\f007';
@@ -141,20 +158,27 @@ Signup
     color: hsla(0, 0, 0, .2);
     text-align: center;
 }
-.signup-classic .emaill::after {
+.signup-classic .email::after {
     content: '\f0e0';
     opacity: 0.5;
 }
 
-.signup-classic .passwordd::after {
+.signup-classic .password::after {
     content: '\f023';
     opacity: 0.5;
 }
-.signup-classic .dobb::after {
+.signup-classic .dob::after {
   content: none;
 }
-.signup-classic .phonee::after {
+.signup-classic .phone::after {
   content: "\f095";
   
   opacity: 0.5;
+}
+
+.slogen{
+  font-style: italic;
+  margin-top: 10%;
+  font-size: 25px;
+  text-align: center;
 }

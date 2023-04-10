@@ -11,23 +11,19 @@ body{
 #navbar{
     display: flex;
     justify-content: space-between;
-    height: 70px;
+    height: 80px;
+    padding-left: 5%;
 }
 
-#navhead{
-    display: flex;
-    color: white;
-    gap: 20px;
-    font-size: larger;
-    margin-right: 40px;
+#navlogo{
+    margin-left: 5%;
 }
 #navbarlogo>img{
-    height: 100%;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 50%;
 }
 
-#navbarlogo{
-    margin-left: 40px;
-}
 
 #home{
     display: flex;
@@ -84,7 +80,7 @@ body{
 
     #home{
         display: grid;
-            border:1px solid red;
+            /* border:1px solid red; */
             grid-template-columns: none;
             margin: auto;
     }
