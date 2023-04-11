@@ -11,7 +11,7 @@
 - This app allows users to create channels and send messages to each other in real-time.
 
 ##Deploy Link
-- Netlify website link-> https://venerable-cucurucho-3fd57c.netlify.app/
+- Netlify website link-> https://singular-axolotl-96063b.netlify.app/
 - render Backend link-> https://nice-cyan-chiton-vest.cyclic.app/
 - render Socket link -> https://socketbe-prags1709.onrender.com
 
